@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import GlobalStyle from '../components/styles/GlobalStyle';
 import { Montserrat, Roboto_Slab } from 'next/font/google';
-import Navbar from '../components/Navbar/Navbar.tsx';
+import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
       `}</style>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

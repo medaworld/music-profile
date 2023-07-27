@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     background-color: #333;
+    color: #fff;
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif

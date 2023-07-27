@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-import { NavLinkList, SocialMediaList } from '../../utils/dummyData';
+import { NavLinkList } from '../../utils/dummyData';
 import {
   Logo,
   LogoImage,
   NavLink,
   NavLinks,
   NavbarContainer,
-  SocialLink,
-  SocialLinks,
 } from './NavbarStyles';
+import SocialsList from '../SocialsList/SocialsList';
 
 const Navbar = () => {
   return (
@@ -26,15 +25,7 @@ const Navbar = () => {
           );
         })}
       </NavLinks>
-      <SocialLinks>
-        {SocialMediaList.map((socialMedia, key) => {
-          return (
-            <SocialLink key={key}>
-              <a href={socialMedia.url}>{socialMedia.icon}</a>
-            </SocialLink>
-          );
-        })}
-      </SocialLinks>
+      <SocialsList />
     </NavbarContainer>
   );
 };
