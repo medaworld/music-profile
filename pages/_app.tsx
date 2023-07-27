@@ -3,14 +3,14 @@ import GlobalStyle from '../components/styles/GlobalStyle';
 import { Montserrat, Roboto_Slab } from 'next/font/google';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import { NextFont } from 'next/dist/compiled/@next/font';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
 
-function concatStyles(styles) {
-  return styles.map((style) => style.styles).join('');
+function concatStyles(styles: NextFont[]): string {
+  return styles.map((style) => style.style).join('');
 }
-
 function MyApp({ Component, pageProps }) {
   return (
     <>

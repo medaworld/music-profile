@@ -39,8 +39,8 @@ export const SocialMediaList = [
 ];
 
 export const NavLinkList = [
-  { title: 'Music', path: '/music' },
-  { title: 'Videos', path: '/videos' },
-  { title: 'News', path: '/news' },
-  { title: 'Photos', path: '/photos' },
+  { title: 'Music', path: 'music' },
+  { title: 'Video', path: 'video' },
+  { title: 'News', path: 'news' },
+  // { title: 'Photos', path: '/photos' },
 ];

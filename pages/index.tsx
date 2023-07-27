@@ -1,9 +1,17 @@
+import HeroSection from '../components/HeroSection/HeroSection';
+import MusicSection from '../components/MusicSection/MusicSection';
+import NewsSection from '../components/NewsSection/NewsSection';
+import VideoSection from '../components/VideoSection/VideoSection';
 import { BackgroundContainer } from '../components/styles/BackgroundContainer';
 
 export default function Home() {
   return (
-    <BackgroundContainer>
-      <main>{/* <h1>Artist Name</h1> */}</main>
-    </BackgroundContainer>
+    <main>
+      <BackgroundContainer />
+      <HeroSection />
+      <MusicSection />
+      <VideoSection />
+      <NewsSection />
+    </main>
   );
 }

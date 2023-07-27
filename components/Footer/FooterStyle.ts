@@ -49,6 +49,7 @@ export const FooterItem = styled.li`
   a {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.7;

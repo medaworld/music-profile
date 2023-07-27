@@ -1,6 +1,5 @@
 import React from 'react';
 import SocialsList from '../SocialsList/SocialsList';
-import Link from 'next/link';
 import {
   FooterContainer,
   FooterList,
@@ -8,21 +7,39 @@ import {
   FooterText,
   FooterLink,
 } from './FooterStyle';
+import { NavLinkList } from '../../utils/dummyData';
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <FooterContainer>
       <SocialsList />
       <FooterList>
-        <FooterItem>
-          <Link href="/">Music</Link>
-        </FooterItem>
-        <FooterItem>
-          <Link href="/">Videos</Link>
-        </FooterItem>
-        <FooterItem>
-          <Link href="/">News</Link>
-        </FooterItem>
+        {NavLinkList.map((navLink, key) => {
+          return (
+            <FooterItem key={key}>
+              <a
+                onClick={() => {
+                  scrollToSection(navLink.path);
+                }}
+              >
+                {navLink.title}
+              </a>
+            </FooterItem>
+          );
+        })}
       </FooterList>
       <FooterText>
         This is a sample footer. &copy; {new Date().getFullYear()} Your Website

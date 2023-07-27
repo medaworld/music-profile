@@ -12,4 +12,6 @@ export const BackgroundContainer = styled.div<BackgroundContainerProps>`
   background-position: center;
   width: 100%;
   height: 100vh;
+  position: fixed;
+  z-index: -1;
 `;
