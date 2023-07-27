@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const NavbarContainer = styled.nav`
   background-image: linear-gradient(rgba(51, 51, 51, 0.5), transparent);
@@ -10,12 +10,14 @@ export const NavbarContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  z-index: 5;
 
   @media (max-width: 768px) {
     justify-content: space-between;
-    background-color: rgba(51, 51, 51, 0.8);
+    background-color: rgba(51, 51, 51, 0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 `;
 
@@ -48,14 +50,16 @@ export const NavLinks = styled.ul<{ isOpen: boolean }>`
   margin: 0 2vw;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+    display: ${({ isOpen }) => (isOpen && css ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 55px;
+    top: 54px;
     left: 0;
     width: 100%;
     background-color: inherit;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 1rem;
     margin: 0;
 
@@ -106,13 +110,15 @@ export const HamburgerBar = styled.span<{ isOpen: boolean }>`
   background-color: #fff;
   transition: all 0.3s ease-in-out;
 
-  ${(props) => props.isOpen && 'transform: translateY(8px) rotate(-45deg);'}
+  ${({ isOpen }) =>
+    isOpen && css && 'transform: translateY(8px) rotate(-45deg);'}
 
   &:nth-child(2) {
     opacity: ${(props) => (props.isOpen ? 0 : 1)};
   }
 
   &:last-child {
-    ${(props) => props.isOpen && 'transform: translateY(-8px) rotate(45deg);'}
+    ${({ isOpen }) =>
+      isOpen && css && 'transform: translateY(-8px) rotate(45deg);'}
   }
 `;

@@ -1,17 +1,30 @@
-import Link from 'next/link';
 import React from 'react';
 import { SocialMediaList } from '../../utils/dummyData';
 import { SocialLink, SocialLinks } from './SocialsListStyles';
+import { facebookLinkHandler } from '../../utils/facebookLinkHandler';
 
 const SocialsList = () => {
   return (
     <SocialLinks>
       {SocialMediaList.map((socialMedia, key) => {
-        return (
-          <SocialLink key={key}>
-            <Link href={socialMedia.url}>{socialMedia.icon}</Link>
-          </SocialLink>
-        );
+        let url = socialMedia.url;
+        if (socialMedia.case === 'facebook') {
+          return (
+            <SocialLink key={key}>
+              <a onClick={() => facebookLinkHandler(socialMedia.handle)}>
+                {socialMedia.icon}
+              </a>
+            </SocialLink>
+          );
+        } else {
+          return (
+            <SocialLink key={key}>
+              <a href={url} target="_blank">
+                {socialMedia.icon}
+              </a>
+            </SocialLink>
+          );
+        }
       })}
     </SocialLinks>
   );

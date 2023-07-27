@@ -18,6 +18,8 @@ export const SocialLink = styled.li`
   a {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
+    display: block;
 
     &:hover {
       opacity: 0.7;

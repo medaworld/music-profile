@@ -3,38 +3,52 @@ import { Icon } from '../components/styles/Icon';
 export const SocialMediaList = [
   {
     platform: 'Instagram',
-    url: 'https://www.instagram.com/',
+    case: 'instagram',
     icon: <Icon>&#xea92;</Icon>,
+    url: 'https://www.instagram.com/username',
   },
   {
     platform: 'YouTube',
-    url: 'https://www.youtube.com/',
+    case: 'youtube',
     icon: <Icon>&#xea9d;</Icon>,
+    url: 'https://www.youtube.com/@username',
   },
   {
     platform: 'TikTok',
-    url: 'https://www.tiktok.com/',
+    case: 'tiktok',
     icon: <Icon>&#xe900;</Icon>,
+    url: 'https://www.tiktok.com/@username',
+  },
+  {
+    platform: 'Twitter',
+    case: 'tiktok',
+    icon: <Icon>&#xea96;</Icon>,
+    url: 'https://twitter.com/username',
   },
   {
     platform: 'Facebook',
-    url: 'https://www.facebook.com/',
+    case: 'facebook',
     icon: <Icon>&#xea90;</Icon>,
+    handle: '83711079303', // Page ID
+    url: 'https://www.facebook.com/83711079303',
   },
   {
     platform: 'Spotify',
-    url: 'https://www.spotify.com/',
+    case: 'spotify',
     icon: <Icon>&#xea94;</Icon>,
+    url: 'https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4',
   },
   {
     platform: 'Apple Music',
-    url: 'https://www.apple.com/',
+    case: 'applemusic',
     icon: <Icon>&#xeabe;</Icon>,
+    url: 'https://music.apple.com/artist/drake/271256',
   },
   {
     platform: 'Soundcloud',
-    url: 'https://www.soundcloud.com/',
+    case: 'soundcloud',
     icon: <Icon>&#xeac3;</Icon>,
+    url: 'https://on.soundcloud.com/FJEipHv4NKRzmm7h9',
   },
 ];
 
@@ -42,5 +56,4 @@ export const NavLinkList = [
   { title: 'Music', path: 'music' },
   { title: 'Video', path: 'video' },
   { title: 'News', path: 'news' },
-  // { title: 'Photos', path: '/photos' },
 ];
