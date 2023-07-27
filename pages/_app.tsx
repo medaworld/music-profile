@@ -1,9 +1,14 @@
 import Head from 'next/head';
-import GlobalStyle from '../styles/GlobalStyle';
+import GlobalStyle from '../components/styles/GlobalStyle';
 import { Montserrat, Roboto_Slab } from 'next/font/google';
+import Navbar from '../components/Navbar/Navbar.tsx';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
+
+function concatStyles(styles) {
+  return styles.map((style) => style.styles).join('');
+}
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,9 +23,13 @@ function MyApp({ Component, pageProps }) {
         ></meta>
       </Head>
       <GlobalStyle />
-      <main className={[montserrat.className, robotoSlab.className]}>
-        <Component {...pageProps} />
-      </main>
+      <style jsx>{`
+        main {
+          ${concatStyles([montserrat, robotoSlab])}
+        }
+      `}</style>
+      <Navbar />
+      <Component {...pageProps} />
     </>
   );
 }
