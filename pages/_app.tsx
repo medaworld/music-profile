@@ -1,16 +1,10 @@
 import Head from 'next/head';
-import GlobalStyle from '../components/styles/GlobalStyle';
-import { Montserrat, Roboto_Slab } from 'next/font/google';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import { NextFont } from 'next/dist/compiled/@next/font';
 
-const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
-const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
+import { StyleSheetManager } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
+import Layout from '../components/Layout/Layout';
+import { MediaPlayerProvider } from '../components/contexts/MediaPlayerProvider';
 
-function concatStyles(styles: NextFont[]): string {
-  return styles.map((style) => style.style).join('');
-}
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -23,15 +17,13 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0"
         ></meta>
       </Head>
-      <GlobalStyle />
-      <style jsx>{`
-        main {
-          ${concatStyles([montserrat, robotoSlab])}
-        }
-      `}</style>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <StyleSheetManager shouldForwardProp={isPropValid}>
+        <MediaPlayerProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </MediaPlayerProvider>
+      </StyleSheetManager>
     </>
   );
 }

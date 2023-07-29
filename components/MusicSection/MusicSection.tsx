@@ -7,6 +7,7 @@ const MusicContainer = styled.div`
   justify-content: center;
   background-size: cover;
   background-position: center;
+  border: 1px solid red;
 `;
 
 const MusicSection = () => {

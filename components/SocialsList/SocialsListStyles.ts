@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 
 export const SocialLinks = styled.ul`
@@ -5,7 +7,6 @@ export const SocialLinks = styled.ul`
   list-style: none;
   padding: 0;
 `;
-
 export const SocialLink = styled.li`
   margin-left: max(15px, 1.5vw);
   color: #fff;

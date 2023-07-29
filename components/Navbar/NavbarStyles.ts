@@ -1,3 +1,5 @@
+'use client';
+
 import styled, { css } from 'styled-components';
 
 export const NavbarContainer = styled.nav`
@@ -20,7 +22,6 @@ export const NavbarContainer = styled.nav`
     -webkit-backdrop-filter: blur(10px);
   }
 `;
-
 export const Logo = styled.a`
   color: #fff;
   text-decoration: none;
@@ -30,7 +31,6 @@ export const Logo = styled.a`
     opacity: 0.7;
   }
 `;
-
 export const LogoImage = styled.img`
   width: 2.5vw;
   min-width: 24px;
@@ -39,7 +39,6 @@ export const LogoImage = styled.img`
     width: 24px;
   }
 `;
-
 export const NavLinks = styled.ul<{ isOpen: boolean }>`
   display: flex;
   list-style: none;
@@ -50,14 +49,14 @@ export const NavLinks = styled.ul<{ isOpen: boolean }>`
   margin: 0 2vw;
 
   @media (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen && css ? 'flex' : 'none')};
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     position: absolute;
     top: 54px;
     left: 0;
     width: 100%;
-    background-color: inherit;
+    background-color: rgba(51, 51, 51, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 1rem;
@@ -69,7 +68,6 @@ export const NavLinks = styled.ul<{ isOpen: boolean }>`
     }
   }
 `;
-
 export const NavLink = styled.li`
   margin-right: 2.2vw;
   font-size: max(16px, 1.02vw);
@@ -92,7 +90,6 @@ export const NavLink = styled.li`
     font-size: 16px;
   }
 `;
-
 export const HamburgerMenu = styled.div`
   display: none;
   cursor: pointer;
@@ -101,7 +98,6 @@ export const HamburgerMenu = styled.div`
     display: block;
   }
 `;
-
 export const HamburgerBar = styled.span<{ isOpen: boolean }>`
   display: block;
   width: 25px;
@@ -110,11 +106,10 @@ export const HamburgerBar = styled.span<{ isOpen: boolean }>`
   background-color: #fff;
   transition: all 0.3s ease-in-out;
 
-  ${({ isOpen }) =>
-    isOpen && css && 'transform: translateY(8px) rotate(-45deg);'}
+  ${({ isOpen }) => isOpen && 'transform: translateY(8px) rotate(-45deg);'}
 
   &:nth-child(2) {
-    opacity: ${(props) => (props.isOpen ? 0 : 1)};
+    opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
   }
 
   &:last-child {

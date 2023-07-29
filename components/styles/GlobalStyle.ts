@@ -1,4 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
+import { NextFont } from 'next/dist/compiled/@next/font';
+import { Montserrat, Roboto_Slab } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
+const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
+
+const concatStyles = (styles: NextFont[]): string => {
+  return styles.map((style) => style.style).join('');
+};
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -12,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   main {
     margin: 0 auto;
     padding: 0;
+    ${concatStyles([montserrat, robotoSlab])}
   }
 
   a {

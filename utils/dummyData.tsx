@@ -5,25 +5,25 @@ export const SocialMediaList = [
     platform: 'Instagram',
     case: 'instagram',
     icon: <Icon>&#xea92;</Icon>,
-    url: 'https://www.instagram.com/username',
+    url: 'https://www.instagram.com/champagnepapi',
   },
   {
     platform: 'YouTube',
     case: 'youtube',
     icon: <Icon>&#xea9d;</Icon>,
-    url: 'https://www.youtube.com/@username',
+    url: 'https://www.youtube.com/@DrakeOfficial',
   },
   {
     platform: 'TikTok',
     case: 'tiktok',
     icon: <Icon>&#xe900;</Icon>,
-    url: 'https://www.tiktok.com/@username',
+    url: 'https://www.tiktok.com/@selenagomez',
   },
   {
     platform: 'Twitter',
     case: 'tiktok',
     icon: <Icon>&#xea96;</Icon>,
-    url: 'https://twitter.com/username',
+    url: 'https://twitter.com/Drake',
   },
   {
     platform: 'Facebook',
@@ -48,7 +48,7 @@ export const SocialMediaList = [
     platform: 'Soundcloud',
     case: 'soundcloud',
     icon: <Icon>&#xeac3;</Icon>,
-    url: 'https://on.soundcloud.com/FJEipHv4NKRzmm7h9',
+    url: 'https://on.soundcloud.com/FJEipHv4NKRzmm7h9', // Mobile Share Link
   },
 ];
 
