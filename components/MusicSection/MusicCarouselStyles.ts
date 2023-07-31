@@ -78,8 +78,8 @@ export const SlideContent = styled.div<{ albumArt: string }>`
 export const Button = styled.button`
   bottom: 10px;
   left: 10px;
-  background-color: rgba(235, 235, 235, 0.9);
-  color: #333;
+  background-color: ${(props) => props.theme.light};
+  color: ${(props) => props.theme.dark};
   border: none;
   padding: 10px;
   margin-bottom: 15px;
@@ -90,7 +90,7 @@ export const Button = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: ${(props) => props.theme.light};
   }
 
   @media (max-width: 768px) {
@@ -113,14 +113,16 @@ export const ReleaseTitle = styled.div`
   max-width: 250px;
   font-weight: 600;
   text-transform: uppercase;
-  text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black,
-    1px 1px 2px black;
+  text-shadow: -1px -1px 2px ${(props) => props.theme.dark},
+    1px -1px 2px ${(props) => props.theme.dark},
+    -1px 1px 2px ${(props) => props.theme.dark},
+    1px 1px 2px ${(props) => props.theme.dark};
 `;
 
 export const ThumbnailGrid = styled.div<{ number: number }>`
-  background-color: rgba(235, 235, 235, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: ${(props) => props.theme.tplight};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: absolute;
   top: 0;
   right: 0;

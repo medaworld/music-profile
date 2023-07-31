@@ -71,7 +71,7 @@ export const SlideWrapper = styled.div`
 const ArrowButton = styled.button`
   background: transparent;
   border: none;
-  color: white;
+  color: ${(props) => props.theme.light};
   cursor: pointer;
   font-size: 24px;
   z-index: 10;
@@ -81,7 +81,7 @@ const ArrowButton = styled.button`
   padding: 10px;
 
   &:hover {
-    color: #555;
+    color: ${(props) => props.theme.grey};
   }
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import VideoCarousel from './VideoCarousel';
 
 const VideoContainer = styled.div`
-  padding-top: 5%;
+  padding: 10% 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,6 @@ const VideoContainer = styled.div`
 
 const videos = [
   'https://www.youtube.com/watch?v=IQqqtOcIQ-E',
-
   'https://www.youtube.com/watch?v=R4DZBZJsoEY',
 ];
 

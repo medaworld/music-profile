@@ -13,11 +13,11 @@ export const CustomControllerContainer = styled.div<{
 
 export const ControllerButton = styled.button`
   background-color: transparent;
-  color: #eee;
+  color: ${(props) => props.theme.light};
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     opacity: 0.7;

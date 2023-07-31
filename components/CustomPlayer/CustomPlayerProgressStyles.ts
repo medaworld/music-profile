@@ -31,7 +31,7 @@ export const AudioProgress = styled.input`
     /* height: 10px; */
     width: 5px;
     border: 0;
-    background: #eee;
+    background: ${(props) => props.theme.light};
     border-radius: 2px;
     -webkit-appearance: none;
     /* transform: translateY(2px); */

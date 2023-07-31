@@ -8,6 +8,7 @@ import {
   NavLink,
   NavLinks,
   NavbarContainer,
+  SocialWrapper,
 } from './NavbarStyles';
 import SocialsList from '../SocialsList/SocialsList';
 
@@ -32,7 +33,7 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarContainer>
+    <NavbarContainer isOpen={isMenuOpen}>
       <Logo onClick={() => scrollToSection('home')}>
         <LogoImage src="/images/logo.png" alt="MEDA" />
       </Logo>
@@ -47,7 +48,9 @@ const Navbar = () => {
           );
         })}
       </NavLinks>
-      <SocialsList />
+      <SocialWrapper isOpen={isMenuOpen}>
+        <SocialsList />
+      </SocialWrapper>
       <HamburgerMenu onClick={toggleMenu}>
         <HamburgerBar isOpen={isMenuOpen} />
         <HamburgerBar isOpen={isMenuOpen} />

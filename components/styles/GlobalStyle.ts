@@ -12,7 +12,7 @@ const concatStyles = (styles: NextFont[]): string => {
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    color: #fff;
+    color: ${(props) => props.theme.light};
     padding: 0;
     margin: 0;
     ${concatStyles([montserrat, robotoSlab])};
@@ -87,8 +87,8 @@ const GlobalStyle = createGlobalStyle`
       color-scheme: dark;
     }
     body {
-      color: white;
-      background: black;
+      color: ${(props) => props.theme.light};
+      background: ${(props) => props.theme.dark};
     }
   }
 `;

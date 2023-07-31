@@ -9,7 +9,7 @@ const CustomPlayerContainer = styled.div`
   right: 3vw;
   width: 500px;
   z-index: 5;
-  background-color: rgba(51, 51, 51, 0.7);
+  background-color: ${(props) => props.theme.tpdark};
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 

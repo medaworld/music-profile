@@ -33,13 +33,13 @@ const Platform = styled.li<{ color: string }>`
   display: flex;
   align-items: center;
   width: 300px;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: ${(props) => props.theme.tpdark};
   margin-bottom: 1rem;
   border-radius: 10px;
   transition: all 0.1s ease;
 
   &:hover {
-    background-color: rgba(235, 235, 235, 0.3);
+    background-color: ${(props) => props.theme.tplight};
 
     span:first-child {
       color: ${({ color }) => color};
@@ -61,8 +61,8 @@ const PFIcon = styled.span`
   padding: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: rgba(235, 235, 235, 0.9);
-  color: #333;
+  background-color: ${(props) => props.theme.tplight};
+  color: ${(props) => props.theme.dark};
 `;
 
 const PFText = styled.span`

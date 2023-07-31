@@ -9,7 +9,7 @@ export const SocialLinks = styled.ul`
 `;
 export const SocialLink = styled.li`
   margin-left: max(15px, 1.5vw);
-  color: #fff;
+  color: ${(props) => props.theme.light};
   text-decoration: none;
 
   &:first-child {
@@ -17,7 +17,7 @@ export const SocialLink = styled.li`
   }
 
   a {
-    color: #fff;
+    color: ${(props) => props.theme.light};
     text-decoration: none;
     cursor: pointer;
     display: block;

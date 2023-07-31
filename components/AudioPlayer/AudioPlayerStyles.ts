@@ -17,14 +17,13 @@ export const AudioControls = styled.div`
 
 export const AudioButton = styled.button`
   background-color: transparent;
-
-  color: #fff;
+  color: ${(props) => props.theme.light};
   border: none;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;

@@ -15,10 +15,10 @@ export const HeroContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: rgba(235, 235, 235, 0.3);
+  background-color: ${(props) => props.theme.tplight};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   display: flex;
   flex-direction: row;
   align-items: center;

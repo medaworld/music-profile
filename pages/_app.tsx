@@ -1,10 +1,11 @@
 import Head from 'next/head';
 
-import { StyleSheetManager } from 'styled-components';
+import { StyleSheetManager, ThemeProvider } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import Layout from '../components/Layout/Layout';
 import { MediaPlayerProvider } from '../components/contexts/MediaPlayerProvider';
 import GlobalStyle from '../components/styles/GlobalStyle';
+import { theme } from '../themes/theme';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -21,12 +22,14 @@ function MyApp({ Component, pageProps }) {
         ></meta>
       </Head>
       <StyleSheetManager shouldForwardProp={isPropValid}>
-        <GlobalStyle />
-        <MediaPlayerProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </MediaPlayerProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <MediaPlayerProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </MediaPlayerProvider>
+        </ThemeProvider>
       </StyleSheetManager>
     </>
   );

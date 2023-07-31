@@ -21,11 +21,11 @@ export const FooterText = styled.p`
 `;
 
 export const FooterLink = styled.a`
-  color: #fff;
+  color: ${(props) => props.theme.light};
   text-decoration: underline;
 
   &:hover {
-    color: #bbb;
+    color: ${(props) => props.theme.grey};
   }
 `;
 
@@ -47,7 +47,7 @@ export const FooterItem = styled.li`
   }
 
   a {
-    color: #fff;
+    color: ${(props) => props.theme.light};
     text-decoration: none;
     cursor: pointer;
 
