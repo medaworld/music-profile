@@ -13,6 +13,7 @@ import {
   AudioWrapper,
   Button,
   Buttons,
+  GridIcon,
   MusicCarouselContainer,
   ReleaseTitle,
   SlideContent,
@@ -20,6 +21,8 @@ import {
   Thumbnail,
   ThumbnailGrid,
 } from './MusicCarouselStyles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTh } from '@fortawesome/free-solid-svg-icons';
 
 const MusicCarousel = ({ releases }) => {
   const numberOfThumbnails = releases.length;
@@ -97,6 +100,9 @@ const MusicCarousel = ({ releases }) => {
                   <FaAmazon /> Listen Now
                 </Button>
               </Buttons>
+              <GridIcon onClick={() => handleThumbnailClick(-1)}>
+                <FontAwesomeIcon icon={faTh} />
+              </GridIcon>
               <AudioWrapper>
                 <AudioPlayer
                   audioSrc={'https://www.youtube.com/watch?v=QA8CU6WeH44'}

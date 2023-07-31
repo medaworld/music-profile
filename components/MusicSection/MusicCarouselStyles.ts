@@ -48,6 +48,23 @@ export const Buttons = styled.div`
   transition: left 0.5s ease;
 `;
 
+export const GridIcon = styled.button`
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  font-size: 30px;
+  color: ${(props) => props.theme.light};
+  position: absolute;
+  top: 15px;
+  right: -50px;
+  transition: right 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 export const SlideContent = styled.div<{ albumArt: string }>`
   background-image: url(${(props) => props.albumArt});
   background-size: cover;
@@ -71,7 +88,11 @@ export const SlideContent = styled.div<{ albumArt: string }>`
   }
 
   &:hover ${Buttons} {
-    left: 35px; /* The final position you want */
+    left: 35px;
+  }
+
+  &:hover ${GridIcon} {
+    right: 25px;
   }
 `;
 
@@ -90,7 +111,7 @@ export const Button = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${(props) => props.theme.light};
+    opacity: 0.8;
   }
 
   @media (max-width: 768px) {
