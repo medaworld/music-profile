@@ -5,7 +5,6 @@ export const MusicCarouselContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
   height: 100%;
   width: 100%;
 
@@ -96,6 +95,16 @@ export const SlideContent = styled.div<{ albumArt: string }>`
   }
 `;
 
+export const DarkCurtain = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: ${(props) => props.theme.dark};
+  opacity: 0.3;
+`;
+
 export const Button = styled.button`
   bottom: 10px;
   left: 10px;
@@ -129,15 +138,11 @@ export const AudioWrapper = styled.div`
 export const ReleaseTitle = styled.div`
   position: absolute;
   left: 40px;
-  top: 60%;
+  top: 25px;
   font-size: 36px;
   max-width: 250px;
   font-weight: 600;
   text-transform: uppercase;
-  text-shadow: -1px -1px 2px ${(props) => props.theme.dark},
-    1px -1px 2px ${(props) => props.theme.dark},
-    -1px 1px 2px ${(props) => props.theme.dark},
-    1px 1px 2px ${(props) => props.theme.dark};
 `;
 
 export const ThumbnailGrid = styled.div<{ number: number }>`

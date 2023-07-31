@@ -13,6 +13,7 @@ import {
   AudioWrapper,
   Button,
   Buttons,
+  DarkCurtain,
   GridIcon,
   MusicCarouselContainer,
   ReleaseTitle,
@@ -70,6 +71,7 @@ const MusicCarousel = ({ releases }) => {
         {releases.map((release: ReleasesProps, index: Key) => (
           <SlideWrapper key={index}>
             <SlideContent albumArt={release.albumArt}>
+              <DarkCurtain />
               <ReleaseTitle>{release.title}</ReleaseTitle>
               <Buttons>
                 <Button
