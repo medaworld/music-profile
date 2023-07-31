@@ -50,9 +50,9 @@ export const Buttons = styled.div`
 
 export const SlideContent = styled.div<{ albumArt: string }>`
   background-image: url(${(props) => props.albumArt});
-  background-size: cover; // Use 'contain' to make sure the image fits inside the container
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; // Center the image
+  background-position: center;
   position: absolute;
   top: 0;
   right: 0;
@@ -113,4 +113,39 @@ export const ReleaseTitle = styled.div`
   max-width: 250px;
   font-weight: 600;
   text-transform: uppercase;
+  text-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black,
+    1px 1px 2px black;
+`;
+
+export const ThumbnailGrid = styled.div<{ number: number }>`
+  background-color: rgba(235, 235, 235, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.number}, 1fr);
+  grid-template-rows: repeat(${(props) => props.number}, 1fr);
+  grid-gap: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+`;
+
+export const Thumbnail = styled.div<{ albumArt: string }>`
+  background-image: url(${(props) => props.albumArt});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;

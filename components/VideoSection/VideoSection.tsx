@@ -1,19 +1,23 @@
 import styled from 'styled-components';
+import VideoCarousel from './VideoCarousel';
 
 const VideoContainer = styled.div`
-  height: 100vh;
+  padding-top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-color: transparent;
 `;
+
+const videos = [
+  'https://www.youtube.com/watch?v=IQqqtOcIQ-E',
+
+  'https://www.youtube.com/watch?v=R4DZBZJsoEY',
+];
 
 const VideoSection = () => {
   return (
     <VideoContainer id="video">
-      <h1>Video Section</h1>
+      <VideoCarousel videos={videos} />
     </VideoContainer>
   );
 };

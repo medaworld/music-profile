@@ -17,9 +17,14 @@ import {
   ReleaseTitle,
   SlideContent,
   SlideWrapper,
+  Thumbnail,
+  ThumbnailGrid,
 } from './MusicCarouselStyles';
 
 const MusicCarousel = ({ releases }) => {
+  const numberOfThumbnails = releases.length;
+  const number = Math.ceil(Math.sqrt(numberOfThumbnails));
+
   const settings = {
     dots: true,
     infinite: false,
@@ -40,10 +45,25 @@ const MusicCarousel = ({ releases }) => {
 
   const sliderRef = useRef(null);
 
+  const handleThumbnailClick = (slideIndex: Key) => {
+    sliderRef.current.slickGoTo(+slideIndex + 1);
+  };
+
   return (
     <MusicCarouselContainer>
       <SectionTitle>MUSIC</SectionTitle>
       <Slider ref={sliderRef} {...settings}>
+        <SlideWrapper>
+          <ThumbnailGrid number={number}>
+            {releases.map((release: ReleasesProps, index: Key) => (
+              <Thumbnail
+                key={index}
+                albumArt={release.albumArt}
+                onClick={() => handleThumbnailClick(index)}
+              />
+            ))}
+          </ThumbnailGrid>
+        </SlideWrapper>
         {releases.map((release: ReleasesProps, index: Key) => (
           <SlideWrapper key={index}>
             <SlideContent albumArt={release.albumArt}>

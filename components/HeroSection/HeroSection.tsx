@@ -19,7 +19,7 @@ const HeroSection = () => (
       <PlayerSection>
         <ImageWrapper>
           <Image
-            src="/images/albumartmock.jpg"
+            src="/images/herloss.jpg"
             alt="Album Art"
             width={250}
             height={250}
