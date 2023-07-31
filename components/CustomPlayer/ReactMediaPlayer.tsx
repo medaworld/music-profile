@@ -1,28 +1,12 @@
-import dynamic from 'next/dynamic';
 import React, { Component, ContextType } from 'react';
-import { styled } from 'styled-components';
+import dynamic from 'next/dynamic';
 import CustomController from './CustomController';
 import CustomPlayerProgress from './CustomPlayerProgress';
 import MediaPlayerContext from '../contexts/media-player-context';
+import { CustomControllers, CustomVisuals } from './ReactMediaPlayerStyles';
 // import ReactPlayer from 'react-player';
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
-
-const CustomVisuals = styled.div`
-  position: relative;
-  /* padding-top: 56.25%; */
-  padding-top: 0.5px;
-  visibility: hidden;
-
-  @media (max-width: 768px) {
-    padding-top: 0.5px;
-    visibility: hidden;
-  }
-`;
-
-const CustomControllers = styled.div`
-  position: relative;
-`;
 
 class ReactMediaPlayer extends Component {
   static contextType = MediaPlayerContext;
