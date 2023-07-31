@@ -7,6 +7,7 @@ const VideoContainer = styled.div`
   justify-content: center;
   background-size: cover;
   background-position: center;
+  background-color: transparent;
 `;
 
 const VideoSection = () => {

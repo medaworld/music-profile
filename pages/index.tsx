@@ -2,16 +2,16 @@ import HeroSection from '../components/HeroSection/HeroSection';
 import MusicSection from '../components/MusicSection/MusicSection';
 import NewsSection from '../components/NewsSection/NewsSection';
 import VideoSection from '../components/VideoSection/VideoSection';
-import { BackgroundContainer } from '../components/styles/BackgroundContainer';
+import CustomPlayer from '../components/CustomPlayer/CustomPlayer';
 
 export default function Home() {
   return (
-    <main>
-      <BackgroundContainer />
+    <>
+      <CustomPlayer />
       <HeroSection />
       <MusicSection />
       <VideoSection />
       <NewsSection />
-    </main>
+    </>
   );
 }

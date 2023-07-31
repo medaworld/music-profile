@@ -4,6 +4,7 @@ import { StyleSheetManager } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import Layout from '../components/Layout/Layout';
 import { MediaPlayerProvider } from '../components/contexts/MediaPlayerProvider';
+import GlobalStyle from '../components/styles/GlobalStyle';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
         ></meta>
       </Head>
       <StyleSheetManager shouldForwardProp={isPropValid}>
+        <GlobalStyle />
         <MediaPlayerProvider>
           <Layout>
             <Component {...pageProps} />

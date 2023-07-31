@@ -2,13 +2,13 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import PlatformsList from '../PlatformsList/PlatformsList';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
-
 const HeroContainer = styled.div`
   display: flex;
   padding-top: 5rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: transparent;
 
   @media (max-width: 768px) {
     padding-top: 3rem;
@@ -50,8 +50,9 @@ const PlatformSection = styled.div`
   }
 `;
 
-const trackUrl =
-  'https://s3.amazonaws.com/audio.distrokid.com/preview_44353978_18F3FF57-BFC3-4288-9EE030D9C5FD4637.mp3';
+const trackUrl = 'https://www.youtube.com/watch?v=IQqqtOcIQ-E';
+const trackUrl2 = 'https://www.youtube.com/watch?v=heG9axS1rQQ';
+const trackUrl3 = 'https://www.youtube.com/watch?v=ft256UIj0DM';
 
 const HeroSection = () => {
   return (
@@ -66,6 +67,7 @@ const HeroSection = () => {
             priority
           />
           <AudioPlayer audioSrc={trackUrl} />
+          <AudioPlayer audioSrc={trackUrl2} />
         </PlayerSection>
         <PlatformSection>
           <PlatformsList />

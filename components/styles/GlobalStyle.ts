@@ -15,13 +15,13 @@ const GlobalStyle = createGlobalStyle`
     color: #fff;
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif
+    ${concatStyles([montserrat, robotoSlab])};
+    font-family: 'Montserrat', sans-serif;
   }
 
   main {
     margin: 0 auto;
     padding: 0;
-    ${concatStyles([montserrat, robotoSlab])}
   }
 
   a {

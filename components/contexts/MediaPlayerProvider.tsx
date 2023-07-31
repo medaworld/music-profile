@@ -1,59 +1,77 @@
-import { useReducer, useState } from 'react';
+import { useReducer } from 'react';
 import MediaPlayerContext from './media-player-context';
 
 interface mediaState {
+  currentTrack: HTMLAudioElement | null;
   isPlaying: boolean;
-  currentTrack: typeof Audio | undefined;
-  currentTime: null | number;
-  totalDuration: null | number;
+  isMuted: boolean;
+  showVideo: boolean;
+  currentTime: number;
+  totalDuration: number;
 }
 
 type Action =
-  | { type: 'PLAY' }
+  | { type: 'PLAY'; src: string; isVideo: boolean }
   | { type: 'PAUSE' }
-  | { type: 'CHANGETRACK'; audio: typeof Audio }
-  | { type: 'CHANGETIME'; time: String };
+  | { type: 'MUTE' }
+  | { type: 'UNMUTE' }
+  | { type: 'CHANGE_TIME'; time: number }
+  | { type: 'UPDATE_PROGRESS'; time: number }
+  | { type: 'UPDATE_DURATION'; duration: number }
+  | { type: 'HIDE_VIDEO' };
 
 const defaultMediaPlayerState = {
+  currentTrack: null,
   isPlaying: false,
-  currentTrack: undefined,
-  totalDuration: null,
-  currentTime: null,
+  isMuted: true,
+  showVideo: false,
+  currentTime: 0,
+  totalDuration: 0,
 };
 
 const mediaPlayerReducer = (state: mediaState, action: Action) => {
-  if (action.type === 'PLAY') {
-    return {
-      isPlaying: true,
-      currentTrack: state.currentTrack,
-      totalDuration: state.totalDuration,
-      currentTime: state.currentTime,
-    };
-  }
-  if (action.type === 'PAUSE') {
-    return {
-      isPlaying: false,
-      currentTrack: state.currentTrack,
-      totalDuration: state.totalDuration,
-      currentTime: state.currentTime,
-    };
-  }
-  if (action.type === 'CHANGETRACK') {
-    const newTrack = action.audio;
-    return {
-      isPlaying: true,
-      currentTrack: newTrack,
-      totalDuration: state.totalDuration,
-      currentTime: state.currentTime,
-    };
-  }
-  if (action.type === 'CHANGETIME') {
-    return {
-      isPlaying: true,
-      currentTrack: state.currentTrack,
-      totalDuration: state.totalDuration,
-      currentTime: state.currentTime,
-    };
+  switch (action.type) {
+    case 'PLAY':
+      if (action.src) {
+        const newTrack = new Audio(action.src);
+
+        return {
+          ...state,
+          currentTrack: newTrack,
+          isPlaying: true,
+          showVideo: true,
+        };
+      } else {
+        return {
+          ...state,
+          isPlaying: true,
+          showVideo: true,
+        };
+      }
+
+    case 'PAUSE':
+      return { ...state, isPlaying: false };
+
+    case 'MUTE':
+      return { ...state, isMuted: true };
+
+    case 'UNMUTE':
+      return { ...state, isMuted: false };
+
+    case 'CHANGE_TIME':
+      return { ...state, currentTime: action.time };
+
+    case 'UPDATE_PROGRESS':
+      return { ...state, currentTime: action.time };
+
+    case 'UPDATE_DURATION':
+      return { ...state, totalDuration: action.duration };
+
+    case 'HIDE_VIDEO':
+      return { ...state, showVideo: false };
+
+    default:
+      return state;
   }
 };
 
@@ -63,31 +81,53 @@ export const MediaPlayerProvider = ({ children }) => {
     defaultMediaPlayerState
   );
 
-  const playMediaHandler = () => {
-    dispatchMediaPlayerAction({ type: 'PLAY' });
+  const play = (src?: string, isVideo?: boolean) => {
+    dispatchMediaPlayerAction({ type: 'PLAY', src, isVideo });
   };
 
-  const pauseMediaHandler = () => {
+  const pause = () => {
     dispatchMediaPlayerAction({ type: 'PAUSE' });
   };
 
-  const selectTrack = (audio: typeof Audio) => {
-    dispatchMediaPlayerAction({ type: 'CHANGETRACK', audio: audio });
+  const mute = () => {
+    dispatchMediaPlayerAction({ type: 'MUTE' });
   };
 
-  const selectTime = (time: String) => {
-    dispatchMediaPlayerAction({ type: 'CHANGETIME', time: time });
+  const unmute = () => {
+    dispatchMediaPlayerAction({ type: 'UNMUTE' });
+  };
+
+  const changeTime = (time: number) => {
+    dispatchMediaPlayerAction({ type: 'CHANGE_TIME', time });
+  };
+
+  const updateProgress = (time: number) => {
+    dispatchMediaPlayerAction({ type: 'UPDATE_PROGRESS', time });
+  };
+
+  const updateDuration = (duration: number) => {
+    dispatchMediaPlayerAction({ type: 'UPDATE_DURATION', duration });
+  };
+
+  const hideVideo = () => {
+    dispatchMediaPlayerAction({ type: 'HIDE_VIDEO' });
   };
 
   const mediaPlayerContext = {
-    isPlaying: mediaPlayerState.isPlaying,
     currentTrack: mediaPlayerState.currentTrack,
+    isPlaying: mediaPlayerState.isPlaying,
+    isMuted: mediaPlayerState.isMuted,
+    showVideo: mediaPlayerState.showVideo,
     currentTime: mediaPlayerState.currentTime,
     totalDuration: mediaPlayerState.totalDuration,
-    play: playMediaHandler,
-    pause: pauseMediaHandler,
-    selectTrack: selectTrack,
-    selectTime: selectTime,
+    play,
+    pause,
+    mute,
+    unmute,
+    changeTime,
+    updateProgress,
+    updateDuration,
+    hideVideo,
   };
 
   return (
