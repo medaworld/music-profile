@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import VideoGrid from './VideoGrid';
 
 const VideoContainer = styled.div`
-  padding: 5% 0;
+  padding-top: 5%;
   align-items: center;
   justify-content: center;
   margin: 0 5rem;

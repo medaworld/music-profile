@@ -13,7 +13,6 @@ import {
   AudioWrapper,
   Button,
   Buttons,
-  DarkCurtain,
   GridIcon,
   MusicCarouselContainer,
   ReleaseTitle,
@@ -24,6 +23,7 @@ import {
 } from './MusicCarouselStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTh } from '@fortawesome/free-solid-svg-icons';
+import { DarkOverShadow } from '../styles/DarkOverShadow';
 
 const MusicCarousel = ({ releases }) => {
   const numberOfThumbnails = releases.length;
@@ -71,7 +71,7 @@ const MusicCarousel = ({ releases }) => {
         {releases.map((release: ReleasesProps, index: Key) => (
           <SlideWrapper key={index}>
             <SlideContent albumArt={release.albumArt}>
-              <DarkCurtain />
+              <DarkOverShadow />
               <ReleaseTitle>{release.title}</ReleaseTitle>
               <Buttons>
                 <Button

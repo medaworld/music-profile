@@ -95,16 +95,6 @@ export const SlideContent = styled.div<{ albumArt: string }>`
   }
 `;
 
-export const DarkCurtain = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: ${(props) => props.theme.dark};
-  opacity: 0.3;
-`;
-
 export const Button = styled.button`
   bottom: 10px;
   left: 10px;

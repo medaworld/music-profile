@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
-import React from 'react';
+import React, { Key, useContext, useEffect, useState } from 'react';
 import { SectionTitle } from '../styles/Fonts';
+import MediaPlayerContext from '../contexts/media-player-context';
 // import ReactPlayer from 'react-player';
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
@@ -29,10 +30,10 @@ const VideoWrapper = styled.div`
 const MoreVideosButton = styled.a`
   display: inline-block;
   text-align: center;
-  margin: 20px auto;
+  margin: 40px 0 0 0;
   padding: 10px 20px;
-  background-color: #ff0000;
-  color: #fff;
+  background-color: ${(props) => props.theme.tplight};
+  color: ${(props) => props.theme.light};
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
@@ -41,49 +42,79 @@ const MoreVideosButton = styled.a`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #e50000;
+    background-color: ${(props) => props.theme.tpdark};
   }
 `;
 
 const ButtonWrapper = styled.div`
   text-align: center;
-  margin: 20px 0;
 `;
 
 const TitleWrapper = styled.div`
   text-align: center;
 `;
 
-const VideoGrid = ({ videos }) => (
-  <VideoGridContainer>
-    <TitleWrapper>
-      <SectionTitle>VIDEO</SectionTitle>
-    </TitleWrapper>
-    <GridContainer>
-      {videos.map((video, index) => (
-        <VideoWrapper key={index}>
-          <ReactPlayer
-            url={video}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-            width="100%"
-            height="100%"
-            controls
-          />
-        </VideoWrapper>
-      ))}
-    </GridContainer>
-    <ButtonWrapper>
-      <MoreVideosButton href="https://www.youtube.com" target="_blank">
-        More Videos
-      </MoreVideosButton>
-    </ButtonWrapper>
-  </VideoGridContainer>
-);
+const VideoGrid = ({ videos }) => {
+  const mediaPlayerCtx = useContext(MediaPlayerContext);
+  const [playingIndex, setPlayingIndex] = useState(null);
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const handlePlay = (index: Key) => {
+    if (mediaPlayerCtx.isPlaying) {
+      mediaPlayerCtx.pause();
+    }
+    setPlayingIndex(index);
+  };
+
+  const handlePause = () => {
+    setPlayingIndex(null);
+  };
+
+  useEffect(() => {
+    if (mediaPlayerCtx.isPlaying) {
+      setPlayingIndex(null);
+    }
+  }, [mediaPlayerCtx.isPlaying]);
+  return (
+    <VideoGridContainer>
+      <TitleWrapper>
+        <SectionTitle>VIDEO</SectionTitle>
+      </TitleWrapper>
+      <GridContainer>
+        {videos.map((video: string, index: Key) => (
+          <VideoWrapper key={index}>
+            <ReactPlayer
+              url={video}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+              width="100%"
+              height="100%"
+              controls
+              playing={playingIndex === index}
+              onPlay={() => handlePlay(index)}
+              onPause={handlePause}
+            />
+          </VideoWrapper>
+        ))}
+      </GridContainer>
+      <ButtonWrapper>
+        <MoreVideosButton href="https://www.youtube.com" target="_blank">
+          More Videos
+        </MoreVideosButton>
+      </ButtonWrapper>
+    </VideoGridContainer>
+  );
+};
 
 export default VideoGrid;
