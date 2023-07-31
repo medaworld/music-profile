@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SocialsList from '../SocialsList/SocialsList';
 import {
   FooterContainer,
@@ -8,8 +8,10 @@ import {
   FooterLink,
 } from './FooterStyle';
 import { NavLinkList } from '../../utils/dummyData';
+import MediaPlayerContext from '../contexts/media-player-context';
 
 const Footer = () => {
+  const mediaPlayerCtx = useContext(MediaPlayerContext);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -24,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <FooterContainer>
+    <FooterContainer playerOpen={mediaPlayerCtx.playerOpen}>
       <SocialsList />
       <FooterList>
         {NavLinkList.map((navLink, key) => {

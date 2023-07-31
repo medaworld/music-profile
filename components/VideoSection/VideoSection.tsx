@@ -13,10 +13,10 @@ const VideoContainer = styled.div`
 `;
 
 const videos = [
-  'https://www.youtube.com/watch?v=qpKpmyjMT3c',
-  'https://www.youtube.com/watch?v=dpsVb65QKRo',
-  'https://www.youtube.com/watch?v=114pwH6sRIs',
-  'https://www.youtube.com/watch?v=6NP7rdx_yZ4',
+  'https://www.youtube.com/watch?v=kcfvTDhRglA',
+  'https://www.youtube.com/watch?v=kehRD_pITKI',
+  'https://www.youtube.com/watch?v=iv5CT_be86c',
+  'https://www.youtube.com/watch?v=1JURDZFq9pY',
 ];
 
 const VideoSection = () => {

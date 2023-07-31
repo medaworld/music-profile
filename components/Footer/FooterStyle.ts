@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const FooterContainer = styled.footer`
+export const FooterContainer = styled.footer<{ playerOpen: boolean }>`
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -12,6 +12,10 @@ export const FooterContainer = styled.footer`
   background-repeat: no-repeat;
   background-position: center;
   padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding-bottom: ${({ playerOpen }) => (playerOpen ? '7rem' : '1.5rem')};
+  }
 `;
 
 export const FooterText = styled.p`

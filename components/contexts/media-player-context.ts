@@ -7,6 +7,7 @@ interface MediaPlayerContextProps {
   showVideo: boolean;
   currentTime: number;
   totalDuration: number;
+  playerOpen: boolean;
   play: (src?: string, isVideo?: boolean) => void;
   pause: () => void;
   mute: () => void;
@@ -24,6 +25,7 @@ const MediaPlayerContext = createContext<MediaPlayerContextProps>({
   showVideo: false,
   currentTime: undefined,
   totalDuration: undefined,
+  playerOpen: false,
   play: (src: string) => {},
   pause: () => {},
   mute: () => {},

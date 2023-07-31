@@ -1,69 +1,22 @@
-import styled from 'styled-components';
 import dynamic from 'next/dynamic';
 import React, { Key, useContext, useEffect, useState } from 'react';
 import { SectionTitle } from '../styles/Fonts';
 import MediaPlayerContext from '../contexts/media-player-context';
+import {
+  VideoGridContainer,
+  TitleWrapper,
+  GridContainer,
+  VideoWrapper,
+  ButtonWrapper,
+  MoreVideosButton,
+} from './VideoGridStyles';
 // import ReactPlayer from 'react-player';
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
-const VideoGridContainer = styled.div``;
-
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  max-width: 1500px;
-  align-items: center;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const VideoWrapper = styled.div`
-  position: relative;
-  padding-top: 56.25%; // 16:9 aspect ratio
-`;
-
-const MoreVideosButton = styled.a`
-  display: inline-block;
-  text-align: center;
-  margin: 40px 0 0 0;
-  padding: 10px 20px;
-  background-color: ${(props) => props.theme.tplight};
-  color: ${(props) => props.theme.light};
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  align-self: center;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: ${(props) => props.theme.tpdark};
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  text-align: center;
-`;
-
-const TitleWrapper = styled.div`
-  text-align: center;
-`;
-
 const VideoGrid = ({ videos }) => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);
   const [playingIndex, setPlayingIndex] = useState(null);
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   const handlePlay = (index: Key) => {
     if (mediaPlayerCtx.isPlaying) {

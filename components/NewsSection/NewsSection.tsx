@@ -43,7 +43,6 @@ const NewsSection = () => {
   return (
     <NewsContainer id="news">
       <NewsGrid posts={posts} />
-      {/* <NewsCarousel posts={posts} /> */}
     </NewsContainer>
   );
 };
