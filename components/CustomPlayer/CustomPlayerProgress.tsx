@@ -30,13 +30,13 @@ const AudioProgress = styled.input`
   }
 
   &::-webkit-slider-thumb {
-    height: 10px;
+    /* height: 10px; */
     width: 5px;
     border: 0;
     background: #eee;
     border-radius: 2px;
     -webkit-appearance: none;
-    transform: translateY(2px);
+    /* transform: translateY(2px); */
   }
 `;
 

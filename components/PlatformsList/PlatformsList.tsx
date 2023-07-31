@@ -29,17 +29,29 @@ const Platforms = styled.ul`
   width: 100%;
 `;
 
-const Platform = styled.li`
+const Platform = styled.li<{ color: string }>`
   display: flex;
   align-items: center;
   width: 300px;
   background-color: rgba(51, 51, 51, 0.8);
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
   border-radius: 10px;
   transition: all 0.1s ease;
 
   &:hover {
     background-color: rgba(235, 235, 235, 0.3);
+
+    span:first-child {
+      color: ${({ color }) => color};
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 400px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 5px;
   }
 `;
 
@@ -49,8 +61,8 @@ const PFIcon = styled.span`
   padding: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: rgba(21, 21, 21, 0.8);
-  color: ${(props: { color: string }) => props.color};
+  background-color: rgba(235, 235, 235, 0.9);
+  color: #333;
 `;
 
 const PFText = styled.span`
@@ -71,8 +83,8 @@ const PlatformsList: React.FC = () => {
             rel="noopener noreferrer"
             key={platform.name}
           >
-            <Platform>
-              <PFIcon color={platform.color} className="icon">
+            <Platform color={platform.color}>
+              <PFIcon className="icon">
                 {React.createElement(platform.icon as IconType, { size: 30 })}
               </PFIcon>
               <PFText>{platform.name}</PFText>

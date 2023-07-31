@@ -5,6 +5,8 @@ import isPropValid from '@emotion/is-prop-valid';
 import Layout from '../components/Layout/Layout';
 import { MediaPlayerProvider } from '../components/contexts/MediaPlayerProvider';
 import GlobalStyle from '../components/styles/GlobalStyle';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -10,7 +10,9 @@ const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const CustomVisuals = styled.div`
   position: relative;
-  padding-top: 56.25%;
+  /* padding-top: 56.25%; */
+  padding-top: 0.5px;
+  visibility: hidden;
 
   @media (max-width: 768px) {
     padding-top: 0.5px;

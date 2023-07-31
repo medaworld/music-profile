@@ -2,16 +2,17 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import PlatformsList from '../PlatformsList/PlatformsList';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
+import { SectionTitle } from '../styles/Fonts';
 const HeroContainer = styled.div`
   display: flex;
-  padding-top: 5rem;
+  padding-top: 10rem;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
   background-color: transparent;
 
   @media (max-width: 768px) {
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     height: auto;
   }
 `;
@@ -30,15 +31,26 @@ const Card = styled.div`
   }
 `;
 
+const ImageWrapper = styled.div`
+  width: 300px;
+
+  @media (min-width: 1440px) {
+    width: 400px;
+  }
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+`;
+
 const PlayerSection = styled.div`
   margin: 2rem;
-  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 `;
 
@@ -51,23 +63,24 @@ const PlatformSection = styled.div`
 `;
 
 const trackUrl = 'https://www.youtube.com/watch?v=IQqqtOcIQ-E';
-const trackUrl2 = 'https://www.youtube.com/watch?v=heG9axS1rQQ';
-const trackUrl3 = 'https://www.youtube.com/watch?v=ft256UIj0DM';
 
 const HeroSection = () => {
   return (
     <HeroContainer id={'home'}>
+      <SectionTitle>OUT NOW</SectionTitle>
       <Card>
         <PlayerSection>
-          <Image
-            src="/images/albumartmock.jpg"
-            alt="Album Art"
-            width={250}
-            height={250}
-            priority
-          />
+          <ImageWrapper>
+            <Image
+              src="/images/albumartmock.jpg"
+              alt="Album Art"
+              width={250}
+              height={250}
+              layout="responsive"
+              priority
+            />
+          </ImageWrapper>
           <AudioPlayer audioSrc={trackUrl} />
-          <AudioPlayer audioSrc={trackUrl2} />
         </PlayerSection>
         <PlatformSection>
           <PlatformsList />
