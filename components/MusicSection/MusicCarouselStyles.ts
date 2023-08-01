@@ -68,6 +68,14 @@ export const GridIcon = styled.div<{ img: string }>`
   }
 `;
 
+export const AudioWrapper = styled.div`
+  position: absolute;
+  right: -50px;
+  bottom: 15px;
+  transition: right 0.5s ease;
+  cursor: pointer;
+`;
+
 export const ReleaseTitle = styled.div`
   position: absolute;
   left: -250px;
@@ -113,6 +121,10 @@ export const SlideContent = styled.div<{ albumArt: string }>`
     right: 35px;
   }
 
+  &:hover ${AudioWrapper} {
+    right: 25px;
+  }
+
   ${DarkOverShadow} {
     opacity: 0;
     transition: all 0.3s ease;
@@ -145,12 +157,6 @@ export const Button = styled.button`
     font-size: 14px;
     padding: 8px;
   }
-`;
-
-export const AudioWrapper = styled.div`
-  position: absolute;
-  right: 25px;
-  bottom: 15px;
 `;
 
 export const ThumbnailGrid = styled.div<{ number: number }>`
