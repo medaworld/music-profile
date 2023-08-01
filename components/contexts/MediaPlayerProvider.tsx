@@ -41,14 +41,14 @@ const mediaPlayerReducer = (state: mediaState, action: Action) => {
           ...state,
           currentTrack: newTrack,
           isPlaying: true,
-          isVideo: true,
+
           playerOpen: true,
         };
       } else {
         return {
           ...state,
           isPlaying: true,
-          isVideo: true,
+
           playerOpen: true,
         };
       }
@@ -113,7 +113,7 @@ export const MediaPlayerProvider = ({ children }) => {
     dispatchMediaPlayerAction({ type: 'UPDATE_DURATION', duration });
   };
 
-  const hideVideo = () => {
+  const hidePlayer = () => {
     dispatchMediaPlayerAction({ type: 'HIDE_VIDEO' });
   };
 
@@ -132,7 +132,7 @@ export const MediaPlayerProvider = ({ children }) => {
     changeTime,
     updateProgress,
     updateDuration,
-    hideVideo,
+    hidePlayer,
   };
 
   return (

@@ -1,21 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import { NextFont } from 'next/dist/compiled/@next/font';
-import { Montserrat, Roboto_Slab } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
-const robotoSlab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '700'] });
 
 const concatStyles = (styles: NextFont[]): string => {
   return styles.map((style) => style.style).join('');
 };
 
 const GlobalStyle = createGlobalStyle`
+  ${concatStyles([montserrat])};
   html,
   body {
     color: ${(props) => props.theme.light};
     padding: 0;
     margin: 0;
-    ${concatStyles([montserrat, robotoSlab])};
     font-family: 'Montserrat', sans-serif;
   }
 

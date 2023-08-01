@@ -23,6 +23,7 @@ const VideoGrid = ({ videos }) => {
     if (mediaPlayerCtx.isPlaying) {
       mediaPlayerCtx.pause();
     }
+    mediaPlayerCtx.hidePlayer();
     setPlayingIndex(index);
   };
 

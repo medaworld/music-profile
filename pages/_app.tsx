@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import { StyleSheetManager, ThemeProvider } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import Layout from '../components/Layout/Layout';

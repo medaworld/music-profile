@@ -10,7 +10,7 @@ export const HeroContainer = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    padding-top: 1.5rem;
+    padding-top: 4rem;
   }
 `;
 

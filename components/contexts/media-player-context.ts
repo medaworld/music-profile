@@ -15,7 +15,7 @@ interface MediaPlayerContextProps {
   changeTime: (time: number) => void;
   updateProgress: (time: number) => void;
   updateDuration: (duration: number) => void;
-  hideVideo: () => void;
+  hidePlayer: () => void;
 }
 
 const MediaPlayerContext = createContext<MediaPlayerContextProps>({
@@ -33,7 +33,7 @@ const MediaPlayerContext = createContext<MediaPlayerContextProps>({
   changeTime: (time: number) => {},
   updateProgress: (time: number) => {},
   updateDuration: (duration: number) => {},
-  hideVideo: () => {},
+  hidePlayer: () => {},
 });
 
 export default MediaPlayerContext;

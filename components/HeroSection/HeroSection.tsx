@@ -14,7 +14,6 @@ const trackUrl = 'https://www.youtube.com/watch?v=IQqqtOcIQ-E';
 
 const HeroSection = () => (
   <HeroContainer id={'home'}>
-    <SectionTitle>OUT NOW</SectionTitle>
     <Card>
       <PlayerSection>
         <PlayerImage>

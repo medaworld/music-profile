@@ -78,7 +78,7 @@ export const AudioWrapper = styled.div`
 
 export const ReleaseTitle = styled.div`
   position: absolute;
-  left: -250px;
+  left: -280px;
   top: 15px;
   font-size: 34px;
   max-width: 280px;

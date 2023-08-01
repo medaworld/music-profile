@@ -88,8 +88,7 @@ class ReactMediaPlayer extends Component {
   };
 
   handleEnded = () => {
-    console.log('onEnded');
-    this.setState({ playing: this.state.loop });
+    this.context.pause();
   };
 
   renderLoadButton = (url, label) => {

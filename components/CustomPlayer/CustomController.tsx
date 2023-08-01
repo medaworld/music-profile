@@ -41,7 +41,7 @@ const CustomController = () => {
 
   const handleClose = () => {
     mediaPlayerCtx.pause();
-    mediaPlayerCtx.hideVideo();
+    mediaPlayerCtx.hidePlayer();
     setShowController(false);
   };
 

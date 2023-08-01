@@ -1,6 +1,7 @@
 import Document, {
   DocumentContext,
   Html,
+  Head,
   Main,
   NextScript,
 } from 'next/document';
@@ -23,20 +24,28 @@ class MyDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <Html>
-            <body>
-              <Main />
-              <div id="overlays" />
-              <NextScript />
-              {initialProps.styles}
-              {sheet.getStyleElement()}
-            </body>
-          </Html>
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
         ),
       };
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <div id="overlays" />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
 
