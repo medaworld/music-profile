@@ -1,4 +1,4 @@
-# Music Profile Website (Drake's Example)
+# Music Profile Website
 
 ## Description
 
@@ -7,6 +7,7 @@ This Music Profile Website is a central hub built with Next.js. This specific de
 ## Table of Contents
 
 - [Features](#features)
+- [Demo](#demo)
 - [Technologies Used](#technologies-used)
 - [Scripts and Dependencies](#scripts-and-dependencies)
 - [Responsive Design](#responsive-design)
@@ -19,6 +20,11 @@ This Music Profile Website is a central hub built with Next.js. This specific de
 - **Videos**: Responsive grid featuring YouTube videos, with an option to explore more content.
 - **News**: A mockup of blog posts to share Artist's latest news and updates.
 
+## Demo
+
+[Live Demo](https://music-profile-site.vercel.app/)
+![Screenshot](/public/images/screenshot.png)
+
 ## Technologies Used
 
 - **Next.js**: For server-rendered applications.
@@ -27,28 +33,6 @@ This Music Profile Website is a central hub built with Next.js. This specific de
 - **React-Player**: For media playback.
 - **React-Slick**: Carousel component for React.
 - **Other Technologies**: HTML, CSS, JavaScript, TypeScript, etc.
-
-## Scripts and Dependencies
-
-Refer to `package.json`:
-
-```json
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint"
-},
-"dependencies": {
-  "@types/node": "^20.4.5",
-  "@types/react": "^18.2.17",
-  ...
-},
-"devDependencies": {
-  "@types/react-slick": "^0.23.10",
-  ...
-}
-```
 
 ## Responsive Design
 
