@@ -5,7 +5,7 @@ interface mediaState {
   currentTrack: HTMLAudioElement | null;
   isPlaying: boolean;
   isMuted: boolean;
-  showVideo: boolean;
+  isVideo: boolean;
   playerOpen: boolean;
   currentTime: number;
   totalDuration: number;
@@ -25,7 +25,7 @@ const defaultMediaPlayerState = {
   currentTrack: null,
   isPlaying: false,
   isMuted: true,
-  showVideo: false,
+  isVideo: false,
   playerOpen: false,
   currentTime: 0,
   totalDuration: 0,
@@ -41,14 +41,14 @@ const mediaPlayerReducer = (state: mediaState, action: Action) => {
           ...state,
           currentTrack: newTrack,
           isPlaying: true,
-          showVideo: true,
+          isVideo: true,
           playerOpen: true,
         };
       } else {
         return {
           ...state,
           isPlaying: true,
-          showVideo: true,
+          isVideo: true,
           playerOpen: true,
         };
       }
@@ -72,7 +72,7 @@ const mediaPlayerReducer = (state: mediaState, action: Action) => {
       return { ...state, totalDuration: action.duration };
 
     case 'HIDE_VIDEO':
-      return { ...state, showVideo: false, playerOpen: false };
+      return { ...state, isVideo: false, playerOpen: false };
 
     default:
       return state;
@@ -121,7 +121,7 @@ export const MediaPlayerProvider = ({ children }) => {
     currentTrack: mediaPlayerState.currentTrack,
     isPlaying: mediaPlayerState.isPlaying,
     isMuted: mediaPlayerState.isMuted,
-    showVideo: mediaPlayerState.showVideo,
+    isVideo: mediaPlayerState.isVideo,
     currentTime: mediaPlayerState.currentTime,
     totalDuration: mediaPlayerState.totalDuration,
     playerOpen: mediaPlayerState.playerOpen,

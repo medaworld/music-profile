@@ -18,7 +18,7 @@ const VideoGrid = ({ videos }) => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);
   const [playingIndex, setPlayingIndex] = useState(null);
 
-  const handlePlay = (index: Key) => {
+  const handlePlay = (index: Key, video: string) => {
     if (mediaPlayerCtx.isPlaying) {
       mediaPlayerCtx.pause();
     }
@@ -34,6 +34,7 @@ const VideoGrid = ({ videos }) => {
       setPlayingIndex(null);
     }
   }, [mediaPlayerCtx.isPlaying]);
+
   return (
     <VideoGridContainer>
       <TitleWrapper>
@@ -55,7 +56,7 @@ const VideoGrid = ({ videos }) => {
               height="100%"
               controls
               playing={playingIndex === index}
-              onPlay={() => handlePlay(index)}
+              onPlay={() => handlePlay(index, video)}
               onPause={handlePause}
             />
           </VideoWrapper>

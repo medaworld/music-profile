@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { styled } from 'styled-components';
 import MediaPlayerContext from '../contexts/media-player-context';
 import ReactMediaPlayer from './ReactMediaPlayer';
@@ -23,15 +23,9 @@ const CustomPlayerContainer = styled.div`
 function CustomPlayer() {
   const mediaPlayerCtx = useContext(MediaPlayerContext);
 
-  const setPlaybackTime = (event) => {};
-
-  useEffect(() => {
-    setPlaybackTime(mediaPlayerCtx.currentTime);
-  }, [mediaPlayerCtx.changeTime]);
-
   return (
     <CustomPlayerContainer
-      style={{ visibility: mediaPlayerCtx.showVideo ? 'initial' : 'hidden' }}
+      style={{ visibility: mediaPlayerCtx.playerOpen ? 'initial' : 'hidden' }}
     >
       <ReactMediaPlayer />
     </CustomPlayerContainer>

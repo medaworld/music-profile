@@ -21,16 +21,16 @@ import {
   Thumbnail,
   ThumbnailGrid,
 } from './MusicCarouselStyles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTh } from '@fortawesome/free-solid-svg-icons';
 import { DarkOverShadow } from '../styles/DarkOverShadow';
+import GridImage from '../../public/images/grid-icon.svg';
+const gridSrc = GridImage.src;
 
 const MusicCarousel = ({ releases }) => {
   const numberOfThumbnails = releases.length;
   const number = Math.ceil(Math.sqrt(numberOfThumbnails));
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -71,7 +71,7 @@ const MusicCarousel = ({ releases }) => {
         {releases.map((release: ReleasesProps, index: Key) => (
           <SlideWrapper key={index}>
             <SlideContent albumArt={release.albumArt}>
-              <DarkOverShadow />
+              <DarkOverShadow opacity={0} />
               <ReleaseTitle>{release.title}</ReleaseTitle>
               <Buttons>
                 <Button
@@ -102,9 +102,10 @@ const MusicCarousel = ({ releases }) => {
                   <FaAmazon /> Listen Now
                 </Button>
               </Buttons>
-              <GridIcon onClick={() => handleThumbnailClick(-1)}>
-                <FontAwesomeIcon icon={faTh} />
-              </GridIcon>
+              <GridIcon
+                img={gridSrc}
+                onClick={() => sliderRef.current.slickGoTo(0)}
+              />
               <AudioWrapper>
                 <AudioPlayer
                   audioSrc={'https://www.youtube.com/watch?v=QA8CU6WeH44'}

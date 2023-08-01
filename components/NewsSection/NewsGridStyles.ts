@@ -68,6 +68,8 @@ export const MoreButton = styled.a`
   padding: 10px 20px;
   background-color: ${(props) => props.theme.tplight};
   color: ${(props) => props.theme.light};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;

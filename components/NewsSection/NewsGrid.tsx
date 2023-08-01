@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import React from 'react';
+import React, { Key } from 'react';
 import { SectionTitle } from '../styles/Fonts';
 import { DarkOverShadow } from '../styles/DarkOverShadow';
 import {
@@ -18,6 +18,12 @@ import {
 
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
+interface PostProps {
+  title: string;
+  image: string;
+  content: string;
+}
+
 const NewsGrid = ({ posts }) => {
   return (
     <VideoGridContainer>
@@ -25,9 +31,9 @@ const NewsGrid = ({ posts }) => {
         <SectionTitle>NEWS</SectionTitle>
       </TitleWrapper>
       <GridContainer>
-        {posts.map((post, index) => (
+        {posts.map((post: PostProps, index: Key) => (
           <PostWrapper key={index} backgroundImage={post.image}>
-            <DarkOverShadow />
+            <DarkOverShadow opacity={0.7} />
             <PostContentWrapper>
               <PostTitle>{post.title}</PostTitle>
               <PostContent>{post.content}</PostContent>

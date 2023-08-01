@@ -4,7 +4,7 @@ interface MediaPlayerContextProps {
   currentTrack: HTMLAudioElement | null;
   isPlaying: boolean;
   isMuted: boolean;
-  showVideo: boolean;
+  isVideo: boolean;
   currentTime: number;
   totalDuration: number;
   playerOpen: boolean;
@@ -22,7 +22,7 @@ const MediaPlayerContext = createContext<MediaPlayerContextProps>({
   currentTrack: undefined,
   isPlaying: false,
   isMuted: true,
-  showVideo: false,
+  isVideo: false,
   currentTime: undefined,
   totalDuration: undefined,
   playerOpen: false,

@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { DarkOverShadow } from '../styles/DarkOverShadow';
 
 export const MusicCarouselContainer = styled.div`
   display: flex;
@@ -47,21 +48,35 @@ export const Buttons = styled.div`
   transition: left 0.5s ease;
 `;
 
-export const GridIcon = styled.button`
-  background-color: transparent;
-  border: none;
-  width: 30px;
-  font-size: 30px;
-  color: ${(props) => props.theme.light};
+export const GridIcon = styled.div<{ img: string }>`
+  background-color: ${(props) => props.theme.light};
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: -50px;
+  width: 30px;
+  height: 30px;
+  mask-image: url('/images/grid-icon.svg');
+  -webkit-mask-image: url('/images/grid-icon.svg');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
   transition: right 0.5s ease;
   cursor: pointer;
 
   &:hover {
     opacity: 0.8;
   }
+`;
+
+export const ReleaseTitle = styled.div`
+  position: absolute;
+  left: -250px;
+  top: 15px;
+  font-size: 34px;
+  max-width: 280px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: left 0.5s ease;
 `;
 
 export const SlideContent = styled.div<{ albumArt: string }>`
@@ -90,8 +105,21 @@ export const SlideContent = styled.div<{ albumArt: string }>`
     left: 35px;
   }
 
+  &:hover ${ReleaseTitle} {
+    left: 35px;
+  }
+
   &:hover ${GridIcon} {
-    right: 25px;
+    right: 35px;
+  }
+
+  ${DarkOverShadow} {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover ${DarkOverShadow} {
+    opacity: 0.6;
   }
 `;
 
@@ -123,16 +151,6 @@ export const AudioWrapper = styled.div`
   position: absolute;
   right: 25px;
   bottom: 15px;
-`;
-
-export const ReleaseTitle = styled.div`
-  position: absolute;
-  left: 40px;
-  top: 25px;
-  font-size: 36px;
-  max-width: 250px;
-  font-weight: 600;
-  text-transform: uppercase;
 `;
 
 export const ThumbnailGrid = styled.div<{ number: number }>`
