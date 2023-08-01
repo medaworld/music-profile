@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const FooterContainer = styled.footer<{ playerOpen: boolean }>`
+export const FooterContainer = styled.footer`
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -12,10 +12,6 @@ export const FooterContainer = styled.footer<{ playerOpen: boolean }>`
   background-repeat: no-repeat;
   background-position: center;
   padding: 1.5rem;
-
-  @media (max-width: 768px) {
-    padding-bottom: ${({ playerOpen }) => (playerOpen ? '7rem' : '1.5rem')};
-  }
 `;
 
 export const FooterText = styled.p`
@@ -62,5 +58,16 @@ export const FooterItem = styled.li`
 
   @media (max-width: 1024px) {
     font-size: 14px;
+  }
+`;
+
+export const WarningFooter = styled.div<{ playerOpen: boolean }>`
+  padding: 0.75rem 1.25rem;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+
+  @media (max-width: 768px) {
+    padding-bottom: ${({ playerOpen }) => (playerOpen ? '7rem' : '1.5rem')};
   }
 `;

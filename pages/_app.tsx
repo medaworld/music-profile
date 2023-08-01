@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>MEDA | Official Website</title>
+        <title>Artist | Official Website</title>
         <meta name="description" content="Official website for MEDA" />
         <link rel="icon" href="/favicon.ico" />
         <meta

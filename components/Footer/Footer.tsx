@@ -6,6 +6,7 @@ import {
   FooterItem,
   FooterText,
   FooterLink,
+  WarningFooter,
 } from './FooterStyle';
 import { NavLinkList } from '../../utils/dummyData';
 import MediaPlayerContext from '../contexts/media-player-context';
@@ -26,34 +27,37 @@ const Footer = () => {
   };
 
   return (
-    <FooterContainer playerOpen={mediaPlayerCtx.playerOpen}>
-      <SocialsList />
-      <FooterList>
-        {NavLinkList.map((navLink, key) => {
-          return (
-            <FooterItem key={key}>
-              <a
-                onClick={() => {
-                  scrollToSection(navLink.path);
-                }}
-              >
-                {navLink.title}
-              </a>
-            </FooterItem>
-          );
-        })}
-      </FooterList>
-      <FooterText>
-        This is a sample footer. &copy; {new Date().getFullYear()} Your Website
-        Name. All rights reserved.
-      </FooterText>
-      <FooterText>
-        Designed and Built by{' '}
-        <FooterLink href="https://www.briansuruki.com/" target="_blank">
-          Brian Suruki
-        </FooterLink>
-      </FooterText>
-    </FooterContainer>
+    <>
+      <FooterContainer>
+        <SocialsList />
+        <FooterList>
+          {NavLinkList.map((navLink, key) => {
+            return (
+              <FooterItem key={key}>
+                <a
+                  onClick={() => {
+                    scrollToSection(navLink.path);
+                  }}
+                >
+                  {navLink.title}
+                </a>
+              </FooterItem>
+            );
+          })}
+        </FooterList>
+        <FooterText>This is a sample footer.</FooterText>
+        <FooterText>
+          Designed and Built by{' '}
+          <FooterLink href="https://www.briansuruki.com/" target="_blank">
+            Brian Suruki
+          </FooterLink>
+        </FooterText>
+      </FooterContainer>
+      <WarningFooter playerOpen={mediaPlayerCtx.playerOpen}>
+        This is a mock site for demonstration purposes only. The content and
+        information on this website are not real.
+      </WarningFooter>
+    </>
   );
 };
 
