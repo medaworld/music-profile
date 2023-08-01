@@ -1,12 +1,13 @@
 import React, { Component, ContextType } from 'react';
-import dynamic from 'next/dynamic';
 import CustomController from './CustomController';
 import CustomPlayerProgress from './CustomPlayerProgress';
 import MediaPlayerContext from '../contexts/media-player-context';
 import { CustomControllers, CustomVisuals } from './ReactMediaPlayerStyles';
-import ReactPlayer from 'react-player';
-
-// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+import dynamic from 'next/dynamic';
+const ReactPlayer =
+  process.env.NEXT_PUBLIC_ENV === 'development'
+    ? dynamic(() => import('react-player'), { ssr: false })
+    : require('react-player').default;
 
 class ReactMediaPlayer extends Component {
   static contextType = MediaPlayerContext;

@@ -1,5 +1,5 @@
-import dynamic from 'next/dynamic';
 import React, { Key, useContext, useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { SectionTitle } from '../styles/Fonts';
 import MediaPlayerContext from '../contexts/media-player-context';
 import {
@@ -10,9 +10,10 @@ import {
   ButtonWrapper,
   MoreVideosButton,
 } from './VideoGridStyles';
-import ReactPlayer from 'react-player';
-
-// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+const ReactPlayer =
+  process.env.NEXT_PUBLIC_ENV === 'development'
+    ? dynamic(() => import('react-player'), { ssr: false })
+    : require('react-player').default;
 
 const VideoGrid = ({ videos }) => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);

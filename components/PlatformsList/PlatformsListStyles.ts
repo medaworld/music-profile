@@ -3,6 +3,8 @@ import { styled } from 'styled-components';
 export const PlatformsListContainer = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
+  align-items: center;
 `;
 
 export const Platforms = styled.ul`
@@ -15,7 +17,7 @@ export const Platforms = styled.ul`
 export const Platform = styled.li<{ color: string }>`
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 100%;
   background-color: ${(props) => props.theme.tpdark};
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -29,12 +31,8 @@ export const Platform = styled.li<{ color: string }>`
     }
   }
 
-  @media (min-width: 1440px) {
-    width: 400px;
-  }
-
   @media (max-width: 768px) {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 `;
 

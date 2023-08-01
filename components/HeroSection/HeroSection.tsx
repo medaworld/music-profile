@@ -1,14 +1,14 @@
-import Image from 'next/image';
 import PlatformsList from '../PlatformsList/PlatformsList';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
 import { SectionTitle } from '../styles/Fonts';
 import {
   Card,
   HeroContainer,
-  ImageWrapper,
   PlatformSection,
+  PlayerImage,
   PlayerSection,
 } from './HeroSectionStyles';
+import ResponsiveImage from '../common/ResponsiveImage';
 
 const trackUrl = 'https://www.youtube.com/watch?v=IQqqtOcIQ-E';
 
@@ -17,16 +17,9 @@ const HeroSection = () => (
     <SectionTitle>OUT NOW</SectionTitle>
     <Card>
       <PlayerSection>
-        <ImageWrapper>
-          <Image
-            src="/images/herloss.jpg"
-            alt="Album Art"
-            width={250}
-            height={250}
-            layout="responsive"
-            priority
-          />
-        </ImageWrapper>
+        <PlayerImage>
+          <ResponsiveImage src={'/images/herloss.jpg'} alt={'Her Loss'} />
+        </PlayerImage>
         <AudioPlayer audioSrc={trackUrl} />
       </PlayerSection>
       <PlatformSection>

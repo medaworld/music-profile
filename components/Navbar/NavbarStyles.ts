@@ -18,7 +18,7 @@ export const NavbarContainer = styled.nav<{ isOpen: boolean }>`
   padding: 0.5rem 1rem;
   z-index: 5;
   max-height: ${({ isOpen }) => (isOpen ? '250px' : '70px')};
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease;
 
   @media (max-width: 768px) {
     justify-content: space-between;

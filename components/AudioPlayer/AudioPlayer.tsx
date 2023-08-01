@@ -1,11 +1,7 @@
 import React, { useContext } from 'react';
 import { FaPlay, FaPause } from 'react-icons/fa';
 import MediaPlayerContext from '../contexts/media-player-context';
-import {
-  AudioButton,
-  AudioControls,
-  AudioPlayerContainer,
-} from './AudioPlayerStyles';
+import { AudioButton, AudioPlayerContainer } from './AudioPlayerStyles';
 
 interface AudioPlayerProps {
   audioSrc: string;
@@ -25,15 +21,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioSrc }) => {
 
   return (
     <AudioPlayerContainer>
-      <AudioControls>
-        <AudioButton onClick={handlePlayPause}>
-          {mediaPlayerCtx.isPlaying && isCurrentTrack ? (
-            <FaPause size={30} />
-          ) : (
-            <FaPlay size={30} />
-          )}
-        </AudioButton>
-      </AudioControls>
+      <AudioButton onClick={handlePlayPause}>
+        {mediaPlayerCtx.isPlaying && isCurrentTrack ? (
+          <FaPause size={30} />
+        ) : (
+          <FaPlay size={30} />
+        )}
+      </AudioButton>
     </AudioPlayerContainer>
   );
 };

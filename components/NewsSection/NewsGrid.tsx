@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import React, { Key } from 'react';
 import { SectionTitle } from '../styles/Fonts';
 import { DarkOverShadow } from '../styles/DarkOverShadow';
@@ -14,9 +13,6 @@ import {
   TitleWrapper,
   VideoGridContainer,
 } from './NewsGridStyles';
-import ReactPlayer from 'react-player';
-
-// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 interface PostProps {
   title: string;
