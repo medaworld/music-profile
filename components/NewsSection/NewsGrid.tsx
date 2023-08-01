@@ -14,9 +14,9 @@ import {
   TitleWrapper,
   VideoGridContainer,
 } from './NewsGridStyles';
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 interface PostProps {
   title: string;

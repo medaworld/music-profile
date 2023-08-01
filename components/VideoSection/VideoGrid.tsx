@@ -10,9 +10,9 @@ import {
   ButtonWrapper,
   MoreVideosButton,
 } from './VideoGridStyles';
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const VideoGrid = ({ videos }) => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);

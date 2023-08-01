@@ -4,9 +4,9 @@ import CustomController from './CustomController';
 import CustomPlayerProgress from './CustomPlayerProgress';
 import MediaPlayerContext from '../contexts/media-player-context';
 import { CustomControllers, CustomVisuals } from './ReactMediaPlayerStyles';
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+// const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 class ReactMediaPlayer extends Component {
   static contextType = MediaPlayerContext;
