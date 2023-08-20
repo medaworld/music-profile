@@ -32,11 +32,12 @@ This Music Profile Website is a central hub built with Next.js. This specific de
 - **Styled Components**: CSS-in-JS library.
 - **React-Player**: For media playback.
 - **React-Slick**: Carousel component for React.
+- **React Icons**: Icon library for React.
 - **Other Technologies**: HTML, CSS, JavaScript, TypeScript, etc.
 
 ## Responsive Design
 
-The site is meticulously crafted with a mobile-first approach, ensuring a seamless experience across both desktop and mobile devices. The design includes two responsive navigation bars that adapt to various screen sizes, maintaining optimal navigation and visual appeal. From the hero section that showcases the latest release to the interactive album grid and video columns, each element is carefully designed to provide an engaging and intuitive experience for the user, regardless of the device being used.
+The site is crafted with a mobile-first approach, ensuring a seamless experience across both desktop and mobile devices. The design includes two responsive navigation bars that adapt to various screen sizes, maintaining optimal navigation and visual appeal. From the hero section that showcases the latest release to the interactive album grid and video columns, each element is carefully designed to provide an engaging and intuitive experience for the user, regardless of the device being used.
 
 ### Hero Section
 
@@ -53,17 +54,6 @@ The video section hosts a responsive grid of two columns filled with YouTube vid
 ### News Section
 
 A mock-up of blog posts is provided in the News section, designed to share the artist's latest updates and connect with fans. A "more posts" button at the bottom suggests the potential for a fully-fledged blog, leading to a complete archive of news and articles.
-
-## Technologies Used
-
-- **Next.js**: Version 13.4.12
-- **React**: Version 18.2.0
-- **Styled Components**: Version 6.0.5
-- **React Player**: Version 2.12.0
-- **React Slick**: Version 0.29.0
-- **Slick Carousel**: Version 1.8.1
-- **TypeScript**: Version 5.1.6
-- **React Icons**: Version 4.10.1
 
 ## Development Scripts
 
