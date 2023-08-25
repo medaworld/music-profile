@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-interface MediaPlayerContextProps {
+interface MediaStateContextProps {
   currentTrack: HTMLAudioElement | null;
   isPlaying: boolean;
   isMuted: boolean;
@@ -18,7 +18,7 @@ interface MediaPlayerContextProps {
   hidePlayer: () => void;
 }
 
-const MediaPlayerContext = createContext<MediaPlayerContextProps>({
+const MediaStateContext = createContext<MediaStateContextProps>({
   currentTrack: undefined,
   isPlaying: false,
   isMuted: true,
@@ -36,4 +36,4 @@ const MediaPlayerContext = createContext<MediaPlayerContextProps>({
   hidePlayer: () => {},
 });
 
-export default MediaPlayerContext;
+export default MediaStateContext;

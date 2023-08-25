@@ -36,7 +36,7 @@ const PlatformsList: React.FC = () => {
             rel="noopener noreferrer"
             key={platform.name}
           >
-            <Platform color={platform.color}>
+            <Platform color={undefined}>
               <PFIcon className="icon">
                 {React.createElement(platform.icon as IconType, { size: 30 })}
               </PFIcon>

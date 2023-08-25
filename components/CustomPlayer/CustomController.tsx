@@ -6,8 +6,8 @@ import {
   FaVolumeMute,
   FaVolumeUp,
 } from 'react-icons/fa';
-import MediaPlayerContext from '../contexts/media-player-context';
-import { formatSeconds } from '../../helpers/numbers';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
+import { formatSeconds } from '../../utils/numberUtils';
 import {
   CustomControllerContainer,
   ControllerButton,

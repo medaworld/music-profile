@@ -32,7 +32,6 @@ export const FooterLink = styled.a`
 export const FooterList = styled.ul`
   display: flex;
   list-style: none;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0;

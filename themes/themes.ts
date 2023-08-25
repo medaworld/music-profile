@@ -1,4 +1,4 @@
-export const theme = {
+export const lightTheme = {
   tplight: 'rgba(235, 235, 235, 0.4)',
   tpdark: 'rgba(51, 51, 51, 0.6)',
   darker: '#111',

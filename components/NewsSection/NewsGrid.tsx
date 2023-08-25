@@ -1,6 +1,6 @@
 import React, { Key } from 'react';
-import { SectionTitle } from '../styles/Fonts';
-import { DarkOverShadow } from '../styles/DarkOverShadow';
+import { SectionTitle } from '../common/Fonts';
+import { DarkOverShadow } from '../common/DarkOverShadow';
 import {
   ButtonWrapper,
   GridContainer,

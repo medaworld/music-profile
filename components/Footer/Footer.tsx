@@ -8,8 +8,8 @@ import {
   FooterLink,
   WarningFooter,
 } from './FooterStyle';
-import { NavLinkList } from '../../utils/dummyData';
-import MediaPlayerContext from '../contexts/media-player-context';
+import { NavLinkList } from '../../utils/dataUtils';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
 
 const Footer = () => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);

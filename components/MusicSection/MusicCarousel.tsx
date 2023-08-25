@@ -8,7 +8,7 @@ import {
   FaAmazon,
 } from 'react-icons/fa';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
-import { SectionTitle } from '../styles/Fonts';
+import { SectionTitle } from '../common/Fonts';
 import {
   AudioWrapper,
   Button,
@@ -21,7 +21,7 @@ import {
   Thumbnail,
   ThumbnailGrid,
 } from './MusicCarouselStyles';
-import { DarkOverShadow } from '../styles/DarkOverShadow';
+import { DarkOverShadow } from '../common/DarkOverShadow';
 import GridImage from '../../public/images/grid-icon.svg';
 const gridSrc = GridImage.src;
 
@@ -108,7 +108,7 @@ const MusicCarousel = ({ releases }) => {
               />
               <AudioWrapper>
                 <AudioPlayer
-                  audioSrc={'https://www.youtube.com/watch?v=QA8CU6WeH44'}
+                  audioSrc={'https://www.youtube.com/watch?v=IQqqtOcIQ-E'}
                 />
               </AudioWrapper>
             </SlideContent>

@@ -51,7 +51,6 @@ export const LogoImage = styled.img`
 export const NavLinks = styled.ul<{ isOpen: boolean }>`
   display: flex;
   list-style: none;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0;

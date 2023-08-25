@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLinkList } from '../../utils/dummyData';
+import { NavLinkList } from '../../utils/dataUtils';
 import {
   HamburgerBar,
   HamburgerMenu,

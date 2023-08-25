@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { styled } from 'styled-components';
-import MediaPlayerContext from '../contexts/media-player-context';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
 import ReactMediaPlayer from './ReactMediaPlayer';
 
 const CustomPlayerContainer = styled.div`

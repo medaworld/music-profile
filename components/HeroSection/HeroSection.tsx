@@ -1,6 +1,6 @@
 import PlatformsList from '../PlatformsList/PlatformsList';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
-import { SectionTitle } from '../styles/Fonts';
+import { SectionTitle } from '../common/Fonts';
 import {
   Card,
   HeroContainer,
@@ -10,14 +10,14 @@ import {
 } from './HeroSectionStyles';
 import ResponsiveImage from '../common/ResponsiveImage';
 
-const trackUrl = 'https://www.youtube.com/watch?v=IQqqtOcIQ-E';
+const trackUrl = 'https://www.youtube.com/watch?v=QA8CU6WeH44';
 
 const HeroSection = () => (
   <HeroContainer id={'home'}>
     <Card>
       <PlayerSection>
         <PlayerImage>
-          <ResponsiveImage src={'/images/herloss.jpg'} alt={'Her Loss'} />
+          <ResponsiveImage src={'/images/views.jpg'} alt={'Her Loss'} />
         </PlayerImage>
         <AudioPlayer audioSrc={trackUrl} />
       </PlayerSection>

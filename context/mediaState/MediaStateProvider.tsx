@@ -1,7 +1,9 @@
-import { useReducer } from 'react';
-import MediaPlayerContext from './media-player-context';
+'use client';
 
-interface mediaState {
+import { useReducer } from 'react';
+import MediaStateContext from './MediaStateContext';
+
+interface ContextStateProps {
   currentTrack: HTMLAudioElement | null;
   isPlaying: boolean;
   isMuted: boolean;
@@ -11,7 +13,7 @@ interface mediaState {
   totalDuration: number;
 }
 
-type Action =
+type ContextActionProps =
   | { type: 'PLAY'; src: string; isVideo: boolean }
   | { type: 'PAUSE' }
   | { type: 'MUTE' }
@@ -31,7 +33,10 @@ const defaultMediaPlayerState = {
   totalDuration: 0,
 };
 
-const mediaPlayerReducer = (state: mediaState, action: Action) => {
+const mediaPlayerReducer = (
+  state: ContextStateProps,
+  action: ContextActionProps
+) => {
   switch (action.type) {
     case 'PLAY':
       if (action.src) {
@@ -79,7 +84,7 @@ const mediaPlayerReducer = (state: mediaState, action: Action) => {
   }
 };
 
-export const MediaPlayerProvider = ({ children }) => {
+export const MediaStateContextProvider = ({ children }) => {
   const [mediaPlayerState, dispatchMediaPlayerAction] = useReducer(
     mediaPlayerReducer,
     defaultMediaPlayerState
@@ -136,8 +141,8 @@ export const MediaPlayerProvider = ({ children }) => {
   };
 
   return (
-    <MediaPlayerContext.Provider value={mediaPlayerContext}>
+    <MediaStateContext.Provider value={mediaPlayerContext}>
       {children}
-    </MediaPlayerContext.Provider>
+    </MediaStateContext.Provider>
   );
 };

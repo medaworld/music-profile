@@ -1,7 +1,7 @@
 import React, { Component, ContextType } from 'react';
 import CustomController from './CustomController';
 import CustomPlayerProgress from './CustomPlayerProgress';
-import MediaPlayerContext from '../contexts/media-player-context';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
 import { CustomControllers, CustomVisuals } from './ReactMediaPlayerStyles';
 import dynamic from 'next/dynamic';
 const ReactPlayer =

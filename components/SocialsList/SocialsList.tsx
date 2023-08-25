@@ -1,7 +1,7 @@
 import React from 'react';
-import { SocialMediaList } from '../../utils/dummyData';
+import { SocialMediaList } from '../../utils/dataUtils';
 import { SocialLink, SocialLinks } from './SocialsListStyles';
-import { facebookLinkHandler } from '../../utils/facebookLinkHandler';
+import { facebookLinkHandler } from '../../utils/linkUtils';
 
 const SocialsList = () => {
   return (

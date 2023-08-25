@@ -1,21 +1,20 @@
+'use client';
+
 import { createGlobalStyle } from 'styled-components';
-import { NextFont } from 'next/dist/compiled/@next/font';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
-
-const concatStyles = (styles: NextFont[]): string => {
-  return styles.map((style) => style.style).join('');
-};
 
 const GlobalStyle = createGlobalStyle`
-  ${concatStyles([montserrat])};
+  :root {
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
   html,
   body {
     color: ${(props) => props.theme.light};
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   main {

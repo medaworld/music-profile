@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaPlay, FaPause } from 'react-icons/fa';
-import MediaPlayerContext from '../contexts/media-player-context';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
 import { AudioButton, AudioPlayerContainer } from './AudioPlayerStyles';
 
 interface AudioPlayerProps {

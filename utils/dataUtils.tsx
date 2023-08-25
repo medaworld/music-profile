@@ -1,4 +1,4 @@
-import { Icon } from '../components/styles/Icon';
+import { Icon } from '../components/common/Icon';
 
 export const SocialMediaList = [
   {

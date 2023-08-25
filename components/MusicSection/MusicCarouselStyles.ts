@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { DarkOverShadow } from '../styles/DarkOverShadow';
+import { DarkOverShadow } from '../common/DarkOverShadow';
 
 export const MusicCarouselContainer = styled.div`
   display: flex;

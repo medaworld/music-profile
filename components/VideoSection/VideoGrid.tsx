@@ -1,7 +1,7 @@
 import React, { Key, useContext, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { SectionTitle } from '../styles/Fonts';
-import MediaPlayerContext from '../contexts/media-player-context';
+import { SectionTitle } from '../common/Fonts';
+import MediaPlayerContext from '../../context/mediaState/MediaStateContext';
 import {
   VideoGridContainer,
   TitleWrapper,
