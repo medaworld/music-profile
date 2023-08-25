@@ -35,10 +35,10 @@ export const FooterList = styled.ul`
   font-weight: 600;
   text-transform: uppercase;
   padding: 0;
+  gap: 1rem;
 `;
 
 export const FooterItem = styled.li`
-  margin-right: 2.2vw;
   font-size: max(14px, 1.02vw);
 
   &:last-child {
