@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import VideoGrid from './VideoGrid';
+import { videoList } from '../../utils/dataUtils';
 
 const VideoContainer = styled.div`
   padding-top: 5%;
@@ -12,17 +13,10 @@ const VideoContainer = styled.div`
   }
 `;
 
-const videos = [
-  'https://www.youtube.com/watch?v=kcfvTDhRglA',
-  'https://www.youtube.com/watch?v=kehRD_pITKI',
-  'https://www.youtube.com/watch?v=iv5CT_be86c',
-  'https://www.youtube.com/watch?v=1JURDZFq9pY',
-];
-
 const VideoSection = () => {
   return (
     <VideoContainer id="video">
-      <VideoGrid videos={videos} />
+      <VideoGrid videos={videoList} />
     </VideoContainer>
   );
 };

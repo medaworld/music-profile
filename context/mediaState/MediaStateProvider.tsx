@@ -1,6 +1,6 @@
 'use client';
 
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 import MediaStateContext from './MediaStateContext';
 
 interface ContextStateProps {
@@ -39,24 +39,18 @@ const mediaPlayerReducer = (
 ) => {
   switch (action.type) {
     case 'PLAY':
+      let newState = {
+        ...state,
+        isPlaying: true,
+        playerOpen: true,
+      };
+
       if (action.src) {
         const newTrack = new Audio(action.src);
-
-        return {
-          ...state,
-          currentTrack: newTrack,
-          isPlaying: true,
-
-          playerOpen: true,
-        };
-      } else {
-        return {
-          ...state,
-          isPlaying: true,
-
-          playerOpen: true,
-        };
+        newState.currentTrack = newTrack;
       }
+
+      return newState;
 
     case 'PAUSE':
       return { ...state, isPlaying: false };
@@ -84,13 +78,17 @@ const mediaPlayerReducer = (
   }
 };
 
-export const MediaStateContextProvider = ({ children }) => {
+export const MediaStateContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [mediaPlayerState, dispatchMediaPlayerAction] = useReducer(
     mediaPlayerReducer,
     defaultMediaPlayerState
   );
 
-  const play = (src?: string, isVideo?: boolean) => {
+  const play = (src?: any, isVideo?: any) => {
     dispatchMediaPlayerAction({ type: 'PLAY', src, isVideo });
   };
 

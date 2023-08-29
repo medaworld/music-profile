@@ -1,19 +1,13 @@
-'use client';
+import HeroSection from '@/components/HeroSection/HeroSection';
+import MusicSection from '@/components/MusicSection/MusicSection';
+import NewsSection from '@/components/NewsSection/NewsSection';
 
-import HeroSection from '../components/HeroSection/HeroSection';
-import MusicSection from '../components/MusicSection/MusicSection';
-import NewsSection from '../components/NewsSection/NewsSection';
-import VideoSection from '../components/VideoSection/VideoSection';
-import CustomPlayer from '../components/CustomPlayer/CustomPlayer';
-
-export default function Home() {
+export default async function Home() {
   return (
-    <>
-      <CustomPlayer />
+    <main>
       <HeroSection />
       <MusicSection />
-      <VideoSection />
       <NewsSection />
-    </>
+    </main>
   );
 }

@@ -1,15 +1,17 @@
-import { Metadata } from 'next';
-import StyledComponentsRegistry from '../lib/registry';
-import { MediaStateContextProvider } from '../context/mediaState/MediaStateProvider';
-import { ThemeStateContextProvider } from '../context/themeState/ThemeStateProvider';
-import Layout from '../components/Layout/Layout';
-import GlobalStyle from '../styles/GlobalStyles';
+import Layout from '@/components/Layout/Layout';
+import { MediaStateContextProvider } from '@/context/mediaState/MediaStateProvider';
+import { ThemeStateContextProvider } from '@/context/themeState/ThemeStateProvider';
+import StyledComponentsRegistry from '@/lib/registry';
+import GlobalStyle from '@/styles/GlobalStyles';
+import type { Metadata } from 'next';
+import { montserrat } from '@/styles/Fonts';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { montserrat } from '../styles/Fonts';
+import { LoadedPostsStateContextProvider } from '@/context/loadedPostsState/LoadedPostsStateProvider';
+import { getPosts } from '@/utils/fetchUtils';
 
 export const metadata: Metadata = {
-  title: 'Artist | Official Website',
+  title: 'MEDA | Official Website',
   description:
     'Explore the creative world of Artist. Dive into their latest work, collections, and journey. ',
   icons: {
@@ -17,21 +19,27 @@ export const metadata: Metadata = {
   },
 };
 
-function MyApp({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const posts = await getPosts(5);
+
   return (
     <html lang="en">
       <StyledComponentsRegistry>
         <ThemeStateContextProvider>
           <GlobalStyle />
           <MediaStateContextProvider>
-            <body className={montserrat.className}>
-              <Layout>{children}</Layout>
-            </body>
+            <LoadedPostsStateContextProvider postsData={posts}>
+              <body className={montserrat.className}>
+                <Layout>{children}</Layout>
+              </body>
+            </LoadedPostsStateContextProvider>
           </MediaStateContextProvider>
         </ThemeStateContextProvider>
       </StyledComponentsRegistry>
     </html>
   );
 }
-
-export default MyApp;

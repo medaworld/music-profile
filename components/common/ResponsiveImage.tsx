@@ -15,7 +15,7 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const ResponsiveImage = ({ src, alt }) => (
+const ResponsiveImage = ({ src, alt }: { src: string; alt: string }) => (
   <ImageWrapper>
     <Image src={src} alt={alt} />
   </ImageWrapper>

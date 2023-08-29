@@ -1,28 +1,31 @@
-import PlatformsList from '../PlatformsList/PlatformsList';
-import AudioPlayer from '../AudioPlayer/AudioPlayer';
-import { SectionTitle } from '../common/Fonts';
+'use client';
+
+import PlatformsList from './PlatformsList';
+import AudioPlayer from '../common/AudioPlayer/AudioPlayer';
 import {
-  Card,
   HeroContainer,
+  Card,
   PlatformSection,
   PlayerImage,
   PlayerSection,
 } from './HeroSectionStyles';
 import ResponsiveImage from '../common/ResponsiveImage';
-
-const trackUrl = 'https://www.youtube.com/watch?v=QA8CU6WeH44';
+import { HeroPlayerTrackData } from '../../utils/dataUtils';
 
 const HeroSection = () => (
   <HeroContainer id={'home'}>
     <Card>
       <PlayerSection>
         <PlayerImage>
-          <ResponsiveImage src={'/images/views.jpg'} alt={'Her Loss'} />
+          <ResponsiveImage
+            src={HeroPlayerTrackData.image}
+            alt={HeroPlayerTrackData.title}
+          />
         </PlayerImage>
-        <AudioPlayer audioSrc={trackUrl} />
+        <AudioPlayer audioSrc={HeroPlayerTrackData.url} />
       </PlayerSection>
       <PlatformSection>
-        <PlatformsList />
+        <PlatformsList platforms={HeroPlayerTrackData.platforms} />
       </PlatformSection>
     </Card>
   </HeroContainer>

@@ -15,9 +15,9 @@ const ReactPlayer =
     ? dynamic(() => import('react-player'), { ssr: false })
     : require('react-player').default;
 
-const VideoGrid = ({ videos }) => {
+const VideoGrid = ({ videos }: { videos: string[] }) => {
   const mediaPlayerCtx = useContext(MediaPlayerContext);
-  const [playingIndex, setPlayingIndex] = useState(null);
+  const [playingIndex, setPlayingIndex] = useState<Key | null>(null);
 
   const handlePlay = (index: Key, video: string) => {
     if (mediaPlayerCtx.isPlaying) {
@@ -40,7 +40,7 @@ const VideoGrid = ({ videos }) => {
   return (
     <VideoGridContainer>
       <TitleWrapper>
-        <SectionTitle>VIDEO</SectionTitle>
+        <SectionTitle>Video</SectionTitle>
       </TitleWrapper>
       <GridContainer>
         {videos.map((video: string, index: Key) => (

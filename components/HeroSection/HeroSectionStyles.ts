@@ -6,8 +6,8 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
   width: 100%;
+  margin-bottom: var(--spacebetween);
 
   @media (max-width: 768px) {
     padding-top: 4rem;
@@ -15,10 +15,10 @@ export const HeroContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: ${(props) => props.theme.tplight};
+  background-color: ${(props) => props.theme.background};
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
+  border-radius: var(--cardBorderRadius);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -26,6 +26,7 @@ export const Card = styled.div`
   margin: 0 auto;
   min-width: 680px;
   max-width: 930px;
+  box-shadow: var(--neumorph);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -35,18 +36,6 @@ export const Card = styled.div`
     width: 100%;
     margin: 0;
     padding: 0 5%;
-  }
-`;
-
-export const PlayerImage = styled.div`
-  width: 100%;
-  min-width: 280px;
-  max-width: 350px;
-
-  @media (max-width: 768px) {
-    min-width: 0;
-    max-width: none;
-    padding: 0 20px;
   }
 `;
 
@@ -61,6 +50,22 @@ export const PlayerSection = styled.div`
   @media (max-width: 768px) {
     margin-bottom: 0;
     width: 100%;
+  }
+`;
+
+export const PlayerImage = styled.div`
+  width: 100%;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  box-shadow: var(--neumorph);
+
+  @media (max-width: 768px) {
+    min-width: 0;
+    max-width: none;
+    padding: 15px;
   }
 `;
 

@@ -4,17 +4,46 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --sectionspace: 1rem;
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --press: -4px 4px 20px 0 rgba(0, 0, 0, 0.2) inset,
+        4px -4px 20px 0px rgba(0, 0, 0, 0.25) inset;
+    --neumorph: 6px 6px 6px 0 rgba(0, 0, 0, 0.25),
+    -1px -1px 6px 0 rgba(255, 255, 255, 0.3);
+    --cardBorderRadius: 20px;
+    --spacebetween: 50px;
   }
 
   html,
   body {
-    color: ${(props) => props.theme.light};
+    color: ${(props) => props.theme.primary};
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+  }
+
+  body {
+    background-color: ${(props) => props.theme.background};
+    
+    &.blur {
+      display: initial;
+      overflow: hidden;
+
+      header {
+        background-color: transparent;
+      }
+
+      #content > * {
+     
+        filter: blur(5px) brightness(0.7);
+        transition: var(--transition);
+        pointer-events: none;
+        user-select: none;
+      }
+    }
   }
 
   main {
@@ -80,15 +109,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
-    body {
-      color: ${(props) => props.theme.light};
-      background: ${(props) => props.theme.dark};
-    }
-  }
+
 `;
 
 export default GlobalStyle;

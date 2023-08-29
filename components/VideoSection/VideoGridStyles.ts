@@ -25,8 +25,8 @@ export const MoreVideosButton = styled.a`
   text-align: center;
   margin: 40px 0 0 0;
   padding: 10px 20px;
-  background-color: ${(props) => props.theme.tplight};
-  color: ${(props) => props.theme.light};
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.primary};
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   text-decoration: none;
@@ -34,10 +34,10 @@ export const MoreVideosButton = styled.a`
   border-radius: 5px;
   cursor: pointer;
   align-self: center;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
 
   &:hover {
-    background-color: ${(props) => props.theme.tpdark};
+    opacity: 0.8;
   }
 `;
 

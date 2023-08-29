@@ -6,6 +6,6 @@ export const DarkOverShadow = styled.div<{ opacity?: number }>`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: ${(props) => props.theme.darker};
+  background-color: ${(props) => props.theme.dark};
   opacity: ${(props) => (props.opacity !== undefined ? props.opacity : 0.6)};
 `;

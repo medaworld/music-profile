@@ -4,12 +4,9 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../themes/themes';
 import { ThemeStateContext } from './ThemeStateContext';
+import { ProviderProps } from '@/types/types';
 
-interface ContextProps {
-  children: React.ReactNode;
-}
-
-export const ThemeStateContextProvider: React.FC<ContextProps> = ({
+export const ThemeStateContextProvider: React.FC<ProviderProps> = ({
   children,
 }) => {
   const [theme, setTheme] = useState(lightTheme);
