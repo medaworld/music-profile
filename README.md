@@ -20,7 +20,7 @@ This Music Profile Website is a central hub built with Next.js. It serves as an 
 ## Demo
 
 Experience the live version here: [Web Profile Site Demo](https://music-profile-site.vercel.app/)
-![Screenshot](/public/images/screenshot.png)
+![Screenshot](/public/images/screenshot.webp)
 
 ## Technologies Used
 
